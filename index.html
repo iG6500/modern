@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modern Konstrukt – Házépítés és 35 m²-es épületek Baja körzetében</title>
+<meta name="description" content="Garázs, hétvégi ház, kis üzlethelyiség és családi ház Baja 100 km-es körzetében. Tervezze meg 30 másodperc alatt, és kérjen ajánlatot.">
+<meta name="theme-color" content="#161615">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235B7A22' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11 12 4l9 7'/%3E%3Cpath d='M5 10v10h14V10'/%3E%3Cpath d='M10 20v-6h4v6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1E1D1B; --ink-2:#55534D; --ink-3:#6E6C64; --muted:#8E8C85;
+  --line:#E2E0D8; --line-2:#D9D7D0; --paper:#FFFFFF; --sand:#F2F1EC;
+  --night:#161615; --dark:#1E1D1B; --dark-2:#2B2A28; --dark-line:#3A3936;
+  --green:#5B7A22; --green-d:#44601A; --green-m:#6F8F32; --lime:#9CC077; --lime-l:#CFE3BE;
+  --g:clamp(20px, 8.4vw, 120px);
+  --sec:clamp(64px, 8.4vw, 120px);
+  --wide:112%;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Archivo','Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--night);line-height:1.4}
+img,svg{max-width:100%}
+a{color:var(--green)}a:hover{color:var(--green-d)}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---------- shared type ---------- */
+.display{font-weight:800;font-stretch:var(--wide);line-height:.95;text-transform:uppercase;margin:0}
+.h2{font-size:clamp(40px,5vw,72px)}
+.kicker{display:flex;align-items:center;gap:12px;font-size:clamp(12px,1vw,14px);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.kicker::before{content:"";width:clamp(24px,2.2vw,32px);height:2px;background:currentColor}
+.kicker.on-dark{color:var(--lime)} .kicker.on-green{color:#E4EEDA}
+.lead{margin:0;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--ink-2)}
+.sec-head{display:flex;flex-direction:column;gap:20px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;height:56px;padding:0 8px 0 24px;border:0;border-radius:999px;text-decoration:none;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;white-space:nowrap}
+.btn .dot{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;flex-shrink:0}
+.btn svg{width:18px;height:18px}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{color:#fff;background:var(--green-d)}.btn-green .dot{background:#fff}
+.btn-lime{background:var(--lime);color:var(--ink)}.btn-lime:hover{color:var(--ink);background:#AACB88}.btn-lime .dot{background:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}.btn-dark:hover{color:#fff;background:#000}.btn-dark .dot{background:var(--lime)}
+.arrow{transition:transform .2s ease}
+a:hover .arrow,button:hover .arrow{transform:translateX(3px)}
+.btn-ghost{height:48px;padding:0 8px;border:0;background:transparent;color:#BDBAB2;font-size:15px;font-weight:600;cursor:pointer}
+.btn-ghost:hover{color:#fff}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s,color .2s,border-color .2s;background:#fff;color:var(--ink);border:1px solid #D0CEC6}
+.chip svg{width:20px;height:20px;flex-shrink:0}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.dk{background:transparent;color:#fff;border-color:#55534D}
+.chip.dk:hover{border-color:#8E8C85}
+.chip.dk[aria-pressed="true"]{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.chip.gr{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.chip.gr:hover{border-color:#fff}
+.chip.gr[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+
+/* ---------- HEADER ---------- */
+.site-header{position:absolute;z-index:20;top:32px;left:40px;right:40px;display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px;padding:0 16px 0 28px;background:#fff;border-radius:8px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.brand svg{width:30px;height:30px;flex-shrink:0}
+.brand span{font-weight:800;font-stretch:115%;font-size:19px;letter-spacing:.02em;white-space:nowrap}
+.brand:hover{color:var(--ink)}
+.nav{display:flex;gap:4px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.nav a{padding:10px 12px;color:var(--ink-2);text-decoration:none;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--green)}
+.head-actions{display:flex;align-items:center;gap:10px}
+.tel-pill{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 18px;border:1px solid var(--line-2);border-radius:999px;color:var(--ink);text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap}
+.tel-pill:hover{color:var(--ink);border-color:var(--ink)}
+.tel-pill svg{width:18px;height:18px}
+.head-cta{height:48px;padding:0 8px 0 20px;font-size:14px;font-weight:700;letter-spacing:.04em}
+.head-cta .dot{width:32px;height:32px}.head-cta svg{width:16px;height:16px}
+.icon-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:0;background:transparent;cursor:pointer;color:var(--ink)}
+.icon-btn.tel{background:var(--green);color:#fff}
+.icon-btn svg{width:22px;height:22px}
+.mnav{position:absolute;top:calc(100% + 8px);left:0;right:0;display:flex;flex-direction:column;padding:8px;background:#fff;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+.mnav[hidden]{display:none}
+.mnav a{display:flex;align-items:center;min-height:52px;padding:0 14px;color:var(--ink);text-decoration:none;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;border-radius:6px}
+.mnav a:hover{background:var(--sand)}
+.mnav a+a{border-top:1px solid var(--line)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;min-height:900px;background:repeating-linear-gradient(135deg,#3A3936 0 16px,#363533 16px 32px);display:flex;flex-direction:column}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(22,22,21,.55)}
+.hero-shapes{position:absolute;right:0;bottom:0;width:100%;height:100%;pointer-events:none}
+.hero-inner{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;gap:26px;max-width:980px;padding:200px var(--g) 140px}
+.hero-pick{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hero-pick .lbl{font-size:14px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime)}
+.htab{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.htab:hover{border-color:#fff}
+.htab[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+.hero h1{font-weight:800;font-stretch:var(--wide);font-size:clamp(52px,6.4vw,92px);line-height:.95;letter-spacing:-.01em;text-transform:uppercase;color:#fff;margin:0}
+.hero h1 span{display:block}
+.hero-sub{margin:0;max-width:580px;font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:#E2E0D8}
+.hero-ctas{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding-top:6px}
+.hero-ctas .btn{height:60px;padding:0 10px 0 28px;font-size:16px}
+.link-call{color:#fff;font-size:16px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--lime);padding-bottom:4px}
+.link-call:hover{color:var(--lime)}
+.hero-note{position:absolute;left:40px;bottom:28px;font-size:13px;color:#A8A69F}
+.live{position:absolute;right:var(--g);bottom:80px;display:flex;gap:16px;align-items:center;width:390px;padding:12px;background:rgba(255,255,255,.96);border-radius:12px;text-decoration:none;color:var(--ink);transition:transform .25s ease,box-shadow .25s ease}
+.live:hover{color:var(--ink);transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.live .ph{width:120px;height:92px;flex-shrink:0;border-radius:8px;background:repeating-linear-gradient(135deg,#E4E3DE 0 12px,#DEDDD7 12px 24px);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-3)}
+.live .txt{display:flex;flex-direction:column;gap:6px;flex-grow:1}
+.live .tag{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green-m);animation:mkp 1.8s ease-in-out infinite}
+@keyframes mkp{0%,100%{opacity:1}50%{opacity:.35}}
+.live .t1{font-size:17px;font-weight:700}.live .t2{font-size:14px;color:var(--ink-2)}
+.live .go{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid var(--line-2)}
+.live .go svg{width:16px;height:16px}
+
+/* ---------- TRUST ---------- */
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px;padding:56px var(--g);background:#fff;border-bottom:1px solid var(--line)}
+.trust .n{font-weight:800;font-stretch:var(--wide);font-size:clamp(40px,4.4vw,64px);line-height:1}
+.trust .n.accent{color:var(--green-m)}
+.trust .l{font-size:16px;color:var(--ink-2);margin-top:4px}
+
+/* ---------- CONFIGURATOR ---------- */
+.cfg{display:flex;flex-direction:column;gap:56px;padding:var(--sec) var(--g);background:var(--sand)}
+.two-head{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,6.6vw,96px);align-items:end}
+.cfg-grid{display:grid;grid-template-columns:5fr 7fr;gap:24px}
+.cfg-controls{display:flex;flex-direction:column;gap:40px;padding:40px;background:#fff;border-radius:16px}
+.ctl{display:flex;flex-direction:column;gap:16px}
+.ctl-lbl{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.ctl-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.size-out{white-space:nowrap;font-weight:800;font-stretch:var(--wide);font-size:clamp(36px,3vw,44px);line-height:1;color:var(--green)}
+.range{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(to right,var(--green) 0 var(--p,50%),#D9D7D0 var(--p,50%));outline:none;margin:12px 0}
+.range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;border-radius:50%;background:var(--green);border:4px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
+.range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--green);border:4px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:pointer}
+.range:focus-visible{outline:2px solid var(--green);outline-offset:6px}
+.range-ends{display:flex;justify-content:space-between;font-size:14px;color:var(--ink-3)}
+.cfg-result{display:flex;flex-direction:column;gap:24px;padding:32px 40px 40px;background:var(--dark);border-radius:16px;color:#fff;min-width:0}
+.res-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.res-head .a{font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.res-head .b{font-size:14px;color:var(--muted)}
+.plan{border-radius:10px;overflow:hidden;background:#242321}
+.plan svg{display:block;width:100%;height:auto}
+.plan rect.room{transition:all .35s ease}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.stat{display:flex;flex-direction:column;gap:4px;padding-top:14px;border-top:1px solid var(--dark-line)}
+.stat .k{font-size:13px;color:var(--muted)}.stat .v{font-size:18px;font-weight:700}
+.summary{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 18px 18px 24px;background:var(--dark-2);border-radius:999px}
+.summary .k{font-size:13px;color:var(--muted)}.summary .v{font-size:18px;font-weight:700}
+.summary .btn{height:54px;flex-shrink:0}
+.summary .dot{width:38px;height:38px}
+
+/* ---------- PROCESS ---------- */
+.proc{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:56px;padding:var(--sec) var(--g);background:var(--dark)}
+.proc .h2{color:#fff}
+.proc-shape{position:absolute;top:0;right:0;width:min(460px,40%);height:auto;pointer-events:none}
+.proc-grid{position:relative;display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:stretch}
+.steps{display:flex;flex-direction:column;border-top:1px solid var(--dark-line);list-style:none;margin:0;padding:0}
+.step-btn{display:flex;align-items:center;gap:20px;width:100%;padding:20px 0;background:transparent;border:0;border-bottom:1px solid var(--dark-line);text-align:left;cursor:pointer;opacity:.45;transition:opacity .2s}
+.step-btn:hover{opacity:.8}
+.step-btn[aria-current="step"]{opacity:1}
+.step-btn .n{font-weight:800;font-stretch:var(--wide);font-size:34px;line-height:1;color:var(--muted);min-width:56px}
+.step-btn[aria-current="step"] .n{color:var(--lime)}
+.step-btn .t{font-size:24px;font-weight:700;text-transform:uppercase;color:#fff}
+.step-panel{display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding:48px;background:var(--dark-2);border-radius:16px}
+.sp-top{display:flex;flex-direction:column;gap:20px}
+.sp-n{font-weight:800;font-stretch:var(--wide);font-size:clamp(56px,8.3vw,120px);line-height:.85;color:var(--lime)}
+.sp-t{margin:0;font-weight:800;font-stretch:var(--wide);font-size:clamp(28px,3vw,44px);text-transform:uppercase;color:#fff}
+.sp-d{margin:0;max-width:560px;font-size:clamp(16px,1.4vw,20px);line-height:1.55;color:#D6D4CC}
+.pill{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:8px 14px;border:1px solid #45433F;border-radius:999px;font-size:15px;color:var(--lime-l)}
+.pill svg{width:16px;height:16px}
+.sp-nav{display:flex;align-items:center;gap:20px}
+.bar{flex-grow:1;height:4px;background:var(--dark-line);border-radius:999px}
+.bar i{display:block;height:100%;background:var(--lime);border-radius:999px;transition:width .3s}
+.circ{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1px solid #55534D;background:transparent;cursor:pointer;flex-shrink:0}
+.circ svg{width:18px;height:18px}
+.circ.fill{border:0;background:var(--lime)}
+.circ:disabled{opacity:.35;cursor:default}
+
+/* ---------- BEFORE / AFTER ---------- */
+.ba{display:flex;flex-direction:column;gap:40px;padding:var(--sec) var(--g);background:#fff}
+.ba-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.ba-box{position:relative;width:100%;aspect-ratio:2/1;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(135deg,#E4E3DE 0 12px,#DEDDD7 12px 24px);touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize}
+.ba-tag{display:flex;flex-direction:column;gap:6px;position:absolute;top:32px}
+.ba-tag b{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.1em}
+.ba-tag span{font-size:14px}
+.ba-after{right:32px;align-items:flex-end}
+.ba-after b{background:var(--green);color:#fff}.ba-after span{color:var(--ink-3)}
+.ba-before-layer{position:absolute;inset:0;background:repeating-linear-gradient(135deg,#3A3936 0 16px,#363533 16px 32px);clip-path:inset(0 calc(100% - var(--ba,50%)) 0 0)}
+.ba-before{left:32px;align-items:flex-start}
+.ba-before b{background:#fff;color:var(--ink)}.ba-before span{color:#A8A69F}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--ba,50%);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+.ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.ba-handle svg{width:22px;height:22px}
+.ba-box:has(.ba-range:focus-visible) .ba-handle span{outline:2px solid var(--green);outline-offset:3px}
+.ba-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.ba-foot .nm{font-size:20px;font-weight:700}.ba-foot .hint{font-size:15px;color:var(--ink-3)}
+
+/* ---------- HOUSE ---------- */
+.house{display:grid;grid-template-columns:7fr 5fr;gap:80px;align-items:center;padding:var(--sec) var(--g);background:var(--sand)}
+.house-img{position:relative;height:580px;border-radius:16px;overflow:hidden;background:repeating-linear-gradient(135deg,#E4E3DE 0 12px,#DEDDD7 12px 24px)}
+.ph-note{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink-3);text-align:center;padding:16px}
+.house-img svg{position:absolute;inset:0;width:100%;height:100%}
+.house-img .cap{position:absolute;left:32px;bottom:32px;font-weight:800;font-stretch:var(--wide);font-size:28px;line-height:1;text-transform:uppercase;color:#fff}
+.house-txt{display:flex;flex-direction:column;gap:24px}
+.house-txt .h2{font-size:clamp(40px,4.2vw,60px)}
+.specs{display:flex;flex-direction:column;border-top:1px solid var(--line-2);margin:0}
+.specs div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-2);font-size:17px}
+.specs dt{color:var(--ink-2)}.specs dd{margin:0;font-weight:700;text-align:right}
+
+/* ---------- TEAM ---------- */
+.team{display:grid;grid-template-columns:5fr 7fr;gap:96px;align-items:center;padding:clamp(64px,7.8vw,112px) var(--g);background:#fff}
+.team-img{position:relative;height:500px;border-radius:16px;background:repeating-linear-gradient(135deg,#E4E3DE 0 12px,#DEDDD7 12px 24px)}
+.team-txt{display:flex;flex-direction:column;gap:28px}
+.team-txt blockquote{margin:0;font-size:clamp(24px,2.4vw,34px);line-height:1.35;font-weight:500}
+.who{display:flex;flex-direction:column;gap:4px;padding-top:24px;border-top:1px solid var(--line)}
+.who .nm{font-weight:800;font-stretch:var(--wide);font-size:26px;text-transform:uppercase}
+.who .rl{font-size:16px;color:var(--ink-2)}
+
+/* ---------- AREA ---------- */
+.area{position:relative;overflow:hidden;display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center;padding:clamp(64px,7.2vw,104px) var(--g);background:var(--green)}
+.area-shape{position:absolute;left:0;bottom:0;width:min(520px,60%);height:auto;pointer-events:none}
+.area .sec-head{position:relative}
+.area .h2{color:#fff}
+.area .lead{color:#E4EEDA}
+.area-right{position:relative;display:flex;flex-direction:column;gap:24px}
+.area .chips{gap:12px}
+.area-out{min-height:88px;display:flex;align-items:center;padding:20px 24px;background:rgba(0,0,0,.18);border-radius:12px}
+.area-out .no{font-size:18px;color:#E4EEDA}
+.area-out .yes{display:flex;justify-content:space-between;align-items:center;gap:24px;width:100%;flex-wrap:wrap}
+.area-out .yes span{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:#fff}
+.area-out .yes svg{width:26px;height:26px;flex-shrink:0}
+.area-out .yes a{flex-shrink:0;color:#fff;font-weight:700;font-size:16px}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;grid-template-columns:5fr 7fr;gap:96px;padding:var(--sec) var(--g);background:#fff}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line);padding:26px 0}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:clamp(18px,1.5vw,21px);font-weight:700;list-style:none;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.plus{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;border-radius:50%;border:1px solid #C9C7BF;color:var(--ink);transition:all .2s}
+.plus svg{width:16px;height:16px}
+.faq details[open] .plus{transform:rotate(45deg);background:var(--green);border-color:var(--green);color:#fff}
+.faq details p{margin:12px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2)}
+.faq .lead a{color:var(--green);font-weight:700}
+
+/* ---------- FORM ---------- */
+.quote{position:relative;overflow:hidden;display:grid;grid-template-columns:5fr 7fr;gap:96px;padding:var(--sec) var(--g);background:var(--dark)}
+.quote-shape{position:absolute;left:0;bottom:0;width:min(440px,60%);height:auto;pointer-events:none}
+.quote .sec-head{position:relative;gap:24px}
+.quote .h2{color:#fff}
+.quote .lead{color:#BDBAB2}
+.call-alt{display:flex;flex-direction:column;gap:4px;padding-top:24px;margin-top:16px;border-top:1px solid #45433F}
+.call-alt span{font-size:14px;color:var(--muted)}
+.call-alt a{font-weight:800;font-stretch:var(--wide);font-size:clamp(26px,2.4vw,34px);color:#fff;text-decoration:none}
+.call-alt a:hover{color:var(--lime)}
+.qcard{position:relative;display:flex;flex-direction:column;gap:32px;padding:48px;background:var(--dark-2);border-radius:16px;min-height:560px}
+.qprog{display:flex;flex-direction:column;gap:12px}
+.qprog .row{display:flex;justify-content:space-between;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.qprog .row span:first-child{color:var(--lime)}.qprog .row span:last-child{color:var(--muted)}
+.qstep{display:flex;flex-direction:column;gap:28px}
+.qstep[hidden]{display:none}
+.qtitle{font-size:26px;font-weight:700;color:#fff}
+.field{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#BDBAB2}
+.in{width:100%;height:52px;padding:0;border:0;border-bottom:1px solid #6E6C64;background:transparent;color:#fff;font-family:inherit;font-size:20px;text-transform:none;letter-spacing:0;border-radius:0}
+.in::placeholder{color:var(--muted)}
+.in:focus{border-bottom-color:var(--lime);outline:none}
+.in:focus-visible{outline:none;box-shadow:0 2px 0 var(--lime)}
+.in[aria-invalid="true"]{border-bottom-color:#F2B8A0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.5;color:#BDBAB2;cursor:pointer}
+.consent input{margin-top:3px;width:18px;height:18px;accent-color:var(--lime);flex-shrink:0}
+.consent a{color:var(--lime-l)}
+.err{font-size:15px;color:#F2B8A0}
+.err[hidden]{display:none}
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.qnav.end{justify-content:flex-end}
+.from-cfg{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(156,192,119,.12);border:1px solid rgba(156,192,119,.4);border-radius:10px;font-size:15px;color:var(--lime-l)}
+.from-cfg svg{width:18px;height:18px;flex-shrink:0}
+.from-cfg strong{color:#fff}
+.sent{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.sent[hidden]{display:none}
+.sent .ok{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:var(--lime)}
+.sent .ok svg{width:34px;height:34px}
+.sent .ttl{font-weight:800;font-stretch:var(--wide);font-size:clamp(32px,3vw,44px);line-height:1;text-transform:uppercase;color:#fff;overflow-wrap:anywhere}
+.sent p{margin:0;font-size:19px;line-height:1.55;color:#D6D4CC}
+.sent .sum{padding:12px 16px;border:1px solid #45433F;border-radius:10px;font-size:16px;color:var(--lime-l)}
+.sent .again{height:44px;padding:0;border:0;background:transparent;color:#BDBAB2;font-size:15px;font-weight:600;text-decoration:underline;cursor:pointer}
+.sent .again:hover{color:#fff}
+button[disabled].btn{opacity:.6;cursor:progress}
+
+/* ---------- FOOTER ---------- */
+.foot{display:flex;flex-direction:column;gap:56px;padding:80px var(--g) 0;background:var(--night);color:#BDBAB2;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:5fr 4fr 3fr;gap:48px}
+.foot .brand{color:#fff}.foot .brand svg{width:28px;height:28px}
+.foot .about{font-size:16px;line-height:1.5;max-width:340px;margin-top:14px}
+.fcol{display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.55}
+.fcol .h{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.fcol .strong{color:#fff}
+.fcol a{color:#BDBAB2;text-decoration:none;padding:2px 0}
+.fcol a:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid #2E2D2A;font-size:14px;color:var(--muted)}
+.foot-bottom a{color:var(--muted)}
+.giant{font-weight:800;font-stretch:125%;font-size:clamp(64px,10.4vw,150px);line-height:.8;letter-spacing:-.02em;color:#232220;white-space:nowrap;margin-bottom:-.07em}
+
+/* ---------- STICKY MOBILE CTA ---------- */
+.sticky-cta{display:none;position:fixed;z-index:30;left:0;right:0;bottom:0;gap:8px;padding:10px 12px calc(14px + env(safe-area-inset-bottom,0px));background:rgba(22,22,21,.94);border-top:1px solid #2E2D2A;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:transform .25s ease}
+.sticky-cta.hide{transform:translateY(110%)}
+.sticky-cta .call{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;flex-shrink:0;border-radius:50%;border:1px solid #55534D}
+.sticky-cta .call svg{width:20px;height:20px}
+.sticky-cta .go{display:flex;flex-grow:1;align-items:center;justify-content:center;height:52px;background:var(--green);border-radius:999px;color:#fff;text-decoration:none;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1280px){
+  .nav a{padding:10px 8px}
+  .tel-pill{display:none}
+}
+@media (max-width:1100px){
+  .nav,.head-cta{display:none}
+  .icon-btn{display:inline-flex}
+  .hero{min-height:0}
+  .hero-inner{padding-bottom:48px}
+  .live{position:relative;right:auto;bottom:auto;margin:0 var(--g) 72px;max-width:440px;width:auto}
+  .cfg-grid,.proc-grid,.house,.team,.area,.faq,.quote{grid-template-columns:1fr}
+  .proc-grid{gap:24px}
+  .house,.team,.area,.faq,.quote{gap:40px}
+  .house-img{height:auto;aspect-ratio:4/3}
+  .team-img{height:auto;aspect-ratio:4/3;max-height:520px}
+  .two-head{grid-template-columns:1fr;gap:20px}
+  .cfg{gap:32px}
+  .proc{gap:32px}
+}
+@media (max-width:760px){
+  .site-header{top:14px;left:14px;right:14px;height:60px;padding:0 6px 0 16px}
+  .brand svg{width:24px;height:24px}.brand span{font-size:15px}
+  .head-actions{gap:2px}
+  .hero-inner{padding:116px 20px 32px;gap:20px;justify-content:flex-start}
+  .hero-pick{flex-direction:column;align-items:flex-start;gap:10px}
+  .hero-pick .lbl{font-size:12px}
+  .htab{padding:0 14px;font-size:14px}
+  .hero-ctas{flex-direction:column;align-items:stretch;gap:18px}
+  .hero-ctas .btn{height:58px;padding:0 9px 0 24px;font-size:15px}
+  .link-call{align-self:flex-start}
+  .live{margin:0 20px 56px;padding:10px;gap:12px}
+  .live .ph{width:72px;height:56px;font-size:0}
+  .live .t1{font-size:15px}.live .t2{display:none}
+  .live .go{border:0;width:28px}
+  .hero-note{left:20px;bottom:16px;font-size:11px}
+  .trust{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px;padding:36px 20px}
+  .trust .l{font-size:14px}
+  .chip{min-height:46px;padding:0 16px;font-size:15px}
+  .chip svg{width:18px;height:18px}
+  .chips{gap:8px}
+  .cfg-controls{padding:24px 20px;gap:28px}
+  .ctl{gap:12px}.ctl-lbl{font-size:12px}
+  .cfg-result{padding:24px 20px}
+  .res-head .a,.res-head .b{font-size:12px}
+  .stats{grid-template-columns:1fr;gap:0}
+  .stat{flex-direction:row;justify-content:space-between;align-items:baseline;padding:12px 0}
+  .stat .v{font-size:16px;text-align:right}
+  .summary{flex-direction:column;align-items:stretch;gap:14px;padding:16px;border-radius:16px}
+  .summary .btn{justify-content:space-between;width:100%;min-width:0;height:auto;min-height:54px;padding:7px 7px 7px 20px;white-space:normal;text-align:left;line-height:1.2;font-size:14px;letter-spacing:.03em}
+  .step-btn{gap:14px;padding:14px 0}
+  .step-btn .n{font-size:26px;min-width:40px}
+  .step-btn .t{font-size:18px}
+  .step-panel{padding:24px 20px;gap:20px}
+  .sp-top{gap:14px}
+  .sp-head{display:flex;align-items:baseline;gap:14px}
+  .pill{font-size:14px;padding:6px 12px}
+  .sp-nav{gap:12px}
+  .circ{width:44px;height:44px}
+  .ba{gap:20px}
+  .ba-box{aspect-ratio:4/5}
+  .ba-tag{top:16px}.ba-after{right:16px}.ba-before{left:16px}
+  .ba-tag b{font-size:11px;padding:5px 11px}.ba-tag span{font-size:12px;max-width:140px}
+  .ba-handle span{width:48px;height:48px}
+  .ba-foot .nm{font-size:17px}.ba-foot .hint{font-size:14px}
+  .house-img .cap{left:20px;bottom:20px;font-size:22px}
+  .specs div{font-size:15px}
+  .area-out{padding:16px 18px}
+  .area-out .no{font-size:16px}
+  .area-out .yes span{font-size:17px}
+  .faq details{padding:20px 0}
+  .faq details p{font-size:16px}
+  .plus{width:36px;height:36px}
+  .qcard{padding:24px 20px;gap:24px;min-height:520px}
+  .qprog .row{font-size:12px}
+  .qtitle{font-size:22px}
+  .qstep{gap:22px}
+  .grid2{grid-template-columns:1fr;gap:22px}
+  .qnav.end .btn,.qnav .btn{flex:1}
+  .qnav.end{justify-content:stretch}
+  .sent p{font-size:17px}
+  .foot{padding:48px 20px 0;gap:32px}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+  .sticky-cta{display:flex}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+}
+@media (min-width:761px){ .sp-head{display:contents} }
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <svg class="hero-shapes" viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMax slice" aria-hidden="true"><polygon points="860,900 1440,180 1440,900" fill="#fff" fill-opacity=".07"/><polygon points="1040,900 1440,420 1440,900" fill="#9CC077" fill-opacity=".10"/></svg>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Modern Konstrukt – az oldal tetejére">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#5B7A22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+      <span>MODERN KONSTRUKT</span>
+    </a>
+    <nav class="nav" aria-label="Fő menü">
+      <a href="#konfig">Tervező</a>
+      <a href="#folyamat">Így dolgozunk</a>
+      <a href="#munkak">Előtte–utána</a>
+      <a href="#haz">Házépítés</a>
+      <a href="#gyik">GYIK</a>
+    </nav>
+    <div class="head-actions">
+      <a class="tel-pill" data-tel href="tel:+36000000000"><svg viewBox="0 0 24 24" fill="none" stroke="#5B7A22" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span data-tel-text>[+36 XX XXX XXXX]</span></a>
+      <a class="btn btn-green head-cta" href="#ajanlat">Ajánlatkérés<span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#5B7A22" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="icon-btn tel" data-tel href="tel:+36000000000" aria-label="Telefonhívás"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mnav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path id="menuIcon" d="M4 8h16M4 16h16"/></svg></button>
+    </div>
+    <nav class="mnav" id="mnav" aria-label="Mobil menü" hidden>
+      <a href="#konfig">Tervező</a>
+      <a href="#folyamat">Így dolgozunk</a>
+      <a href="#munkak">Előtte–utána</a>
+      <a href="#haz">Házépítés</a>
+      <a href="#gyik">GYIK</a>
+      <a href="#ajanlat">Ajánlatkérés</a>
+    </nav>
+  </header>
+
+  <div class="hero-inner">
+    <div class="hero-pick">
+      <span class="lbl">Mit építene?</span>
+      <div class="chips" role="group" aria-label="Érdeklődés" style="gap:8px">
+        <button type="button" class="htab" data-intent="m35" aria-pressed="true">35 m²-es épület</button>
+        <button type="button" class="htab" data-intent="haz" aria-pressed="false">Családi ház</button>
+      </div>
+    </div>
+    <h1 id="heroTitle"><span>35 m²-ig.</span><span>Gyorsan.</span><span>Rendesen.</span></h1>
+    <p class="hero-sub" id="heroSub">Garázs, hétvégi ház, kis üzlethelyiség. Tervezze meg 30 másodperc alatt, és kérjen rá ajánlatot.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-green" id="heroCta" href="#konfig"><span id="heroCtaText">Megtervezem</span><span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#5B7A22" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="link-call" data-tel href="tel:+36000000000">Vagy hívjon most</a>
+    </div>
+  </div>
+
+  <a href="#munkak" class="live">
+    <div class="ph">[Fotó]</div>
+    <div class="txt">
+      <div class="tag"><span class="pulse"></span>Most épül</div>
+      <div class="t1">[Település] · garázs</div>
+      <div class="t2">Nézze meg előtte–utána</div>
+    </div>
+    <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1D1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+  </a>
+  <div class="hero-note">[Háttérvideó vagy fotó: épülő, majd kész épület, 6–8 mp, hang nélkül]</div>
+</section>
+
+<main>
+<!-- ============ TRUST ============ -->
+<section class="trust" aria-label="Számokban">
+  <div><div class="n accent">[X]+</div><div class="l">átadott épület</div></div>
+  <div><div class="n">100 km</div><div class="l">körzet Baja körül</div></div>
+  <div><div class="n">[X] év</div><div class="l">garancia a kivitelezésre</div></div>
+  <div><div class="n">24 óra</div><div class="l">alatt visszahívjuk</div></div>
+</section>
+
+<!-- ============ CONFIGURATOR ============ -->
+<section class="cfg" id="konfig">
+  <div class="two-head">
+    <div class="sec-head"><div class="kicker">35 m² tervező</div><h2 class="display h2">Tervezze meg 30 mp alatt</h2></div>
+    <p class="lead">Válassza ki, mit építene, húzza be a méretet, és rögtön látja, mekkora lesz. Egy kattintással ajánlatot kérhet pont erre.</p>
+  </div>
+  <div class="cfg-grid">
+    <div class="cfg-controls">
+      <div class="ctl">
+        <div class="ctl-lbl" id="lblType">1 · Mit építene?</div>
+        <div class="chips" role="group" aria-labelledby="lblType" id="cfgTypes">
+          <button type="button" class="chip" data-type="garazs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 4l9 6v10H3z"/><path d="M7 20v-7h10v7"/><path d="M7 16h10"/></svg>Garázs</button>
+          <button type="button" class="chip" data-type="hetvegi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20"/><path d="M4 20 12 5l8 15"/><path d="M10 20v-5h4v5"/></svg>Hétvégi ház</button>
+          <button type="button" class="chip" data-type="uzlet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h18l-1.5-5h-15z"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg>Kis üzlet</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <div class="ctl-row"><label class="ctl-lbl" for="sizeRange">2 · Mekkora legyen?</label><div class="size-out" aria-hidden="true"><span id="sizeOut">24</span> m²</div></div>
+        <input class="range" id="sizeRange" type="range" min="12" max="35" step="1" value="24" aria-valuetext="24 négyzetméter">
+        <div class="range-ends" aria-hidden="true"><span>12 m²</span><span>35 m²</span></div>
+      </div>
+      <div class="ctl">
+        <div class="ctl-lbl" id="lblFin">3 · Milyen állapotban adjuk át?</div>
+        <div class="chips" role="group" aria-labelledby="lblFin" id="cfgFins">
+          <button type="button" class="chip" data-fin="szerk">Szerkezetkész</button>
+          <button type="button" class="chip" data-fin="kulcs">Kulcsrakész</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cfg-result">
+      <div class="res-head"><div class="a">Alaprajz-vázlat</div><div class="b">tájékoztató jellegű</div></div>
+      <div class="plan">
+        <svg id="planSvg" viewBox="0 0 440 330" role="img" aria-labelledby="planTitle">
+          <title id="planTitle">Alaprajz-vázlat</title>
+          <defs><pattern id="mkgrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#2F2E2B" stroke-width="1"/></pattern></defs>
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#mkgrid)"/>
+          <rect class="room" id="pRoom" rx="2" fill="#9CC077" fill-opacity=".14" stroke="#9CC077" stroke-width="2.5"/>
+          <line id="pDimTop" stroke="#8E8C85" stroke-width="1"/>
+          <line id="pDimLeft" stroke="#8E8C85" stroke-width="1"/>
+          <text id="pTxtL" text-anchor="middle" fill="#E2E0D8" font-size="13" font-family="Archivo, sans-serif" font-weight="700"></text>
+          <text id="pTxtW" text-anchor="middle" fill="#E2E0D8" font-size="13" font-family="Archivo, sans-serif" font-weight="700"></text>
+          <text id="pTxtA" text-anchor="middle" dominant-baseline="middle" fill="#9CC077" font-size="22" font-family="Archivo, sans-serif" font-weight="800"></text>
+        </svg>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="k">Méret</span><span class="v" id="stSize">–</span></div>
+        <div class="stat"><span class="k">Mire elég</span><span class="v" id="stCap">–</span></div>
+        <div class="stat"><span class="k">Irányár</span><span class="v">[Tamás m²-árai alapján]</span></div>
+      </div>
+      <div class="summary">
+        <div><div class="k">Az Ön választása</div><div class="v" id="cfgSummary" aria-live="polite">–</div></div>
+        <a class="btn btn-lime" href="#ajanlat" id="cfgToForm">Ajánlatot kérek erre<span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="proc" id="folyamat">
+  <svg class="proc-shape" viewBox="0 0 460 520" aria-hidden="true"><polygon points="0,0 460,0 460,520" fill="#fff" fill-opacity=".04"/></svg>
+  <div class="sec-head" style="position:relative"><div class="kicker on-dark">Így dolgozunk</div><h2 class="display h2">Első hívástól a kulcsig</h2></div>
+  <div class="proc-grid">
+    <ol class="steps" id="stepList"></ol>
+    <div class="step-panel" aria-live="polite">
+      <div class="sp-top">
+        <div class="sp-head"><div class="sp-n" id="spN">01</div><h3 class="sp-t" id="spT">Felmérés</h3></div>
+        <p class="sp-d" id="spD"></p>
+        <div class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span id="spDur"></span></div>
+      </div>
+      <div class="sp-nav">
+        <div class="bar"><i id="procBar" style="width:25%"></i></div>
+        <button type="button" class="circ" id="procPrev" aria-label="Előző lépés"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button type="button" class="circ fill" id="procNext" aria-label="Következő lépés"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#1E1D1B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="ba" id="munkak">
+  <div class="ba-head">
+    <div class="sec-head"><div class="kicker">Munkáink</div><h2 class="display h2">Előtte – utána</h2></div>
+    <div class="chips" role="group" aria-label="Projekt választása" id="projTabs"></div>
+  </div>
+  <div class="ba-box" id="baBox">
+    <div class="ba-tag ba-after"><b>UTÁNA</b><span>[Fotó: kész épület]</span></div>
+    <div class="ba-before-layer"><div class="ba-tag ba-before"><b>ELŐTTE</b><span>[Fotó: üres telek, ugyanabból a szögből]</span></div></div>
+    <div class="ba-handle"><span><svg viewBox="0 0 24 24" fill="none" stroke="#1E1D1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+    <input class="ba-range sr-only" id="baRange" type="range" min="0" max="100" value="50" aria-label="Előtte–utána összehasonlítás">
+  </div>
+  <div class="ba-foot"><span class="nm" id="projName">[Település] · garázs</span><span class="hint">Húzza a csúszkát balra vagy jobbra</span></div>
+</section>
+
+<!-- ============ HOUSE ============ -->
+<section class="house" id="haz">
+  <div class="house-img">
+    <div class="ph-note">[Fotó: átadott családi ház]</div>
+    <svg viewBox="0 0 700 580" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,580 0,350 360,580" fill="#5B7A22" fill-opacity=".9"/></svg>
+    <div class="cap">Kulcsrakész<br>családi házak</div>
+  </div>
+  <div class="house-txt">
+    <div class="kicker">Házépítés</div>
+    <h2 class="display h2">Ha nagyobbat tervez</h2>
+    <p class="lead">Új családi házakat is építünk a térségben, a tervezéstől az átadásig egy kapcsolattartóval.</p>
+    <dl class="specs">
+      <div><dt>Technológia</dt><dd>[tégla / könnyűszerkezet]</dd></div>
+      <div><dt>Átadás</dt><dd>Szerkezetkész vagy kulcsrakész</dd></div>
+      <div><dt>Támogatás</dt><dd>[CSOK Plusz – ha vállaljuk]</dd></div>
+    </dl>
+    <div style="padding-top:8px"><a class="btn btn-dark" href="#ajanlat" id="houseCta">Házépítésről kérdeznék<span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#1E1D1B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="team" aria-label="Akivel dolgozni fog">
+  <div class="team-img"><div class="ph-note">[Portré: Tamás a munkaterületen]</div></div>
+  <div class="team-txt">
+    <div class="kicker">Akivel dolgozni fog</div>
+    <svg width="56" height="44" viewBox="0 0 56 44" aria-hidden="true"><path d="M0 44V26C0 11 8 2 22 0l2 7c-8 2-12 7-12 15h11v22zm32 0V26C32 11 40 2 54 0l2 7c-8 2-12 7-12 15h11v22z" fill="#9CC077"/></svg>
+    <blockquote>[Tamás két-három mondata arról, miért csinálja, és mire figyel minden munkánál.]</blockquote>
+    <div class="who"><div class="nm">Varga Tamás</div><div class="rl">[beosztás] · Modern Konstrukt Kft.</div></div>
+  </div>
+</section>
+
+<!-- ============ AREA ============ -->
+<section class="area" aria-labelledby="areaTitle">
+  <svg class="area-shape" viewBox="0 0 520 340" aria-hidden="true"><polygon points="0,340 0,0 520,340" fill="#fff" fill-opacity=".06"/></svg>
+  <div class="sec-head"><div class="kicker on-green">Szolgáltatási terület</div><h2 class="display h2" id="areaTitle">Kiszállunk<br>önhöz?</h2><p class="lead">Koppintson a legközelebbi városra.</p></div>
+  <div class="area-right">
+    <div class="chips" role="group" aria-label="Város" id="cities"></div>
+    <div class="area-out" aria-live="polite" id="areaOut"><span class="no">Bajától nagyjából 100 km-ig vállalunk munkát.</span></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="gyik">
+  <div class="sec-head"><div class="kicker">GYIK</div><h2 class="display h2">Gyakori kérdések</h2><p class="lead">Nem találja a választ? Hívjon: <a data-tel href="tel:+36000000000"><span data-tel-text>[+36 XX XXX XXXX]</span></a></p></div>
+  <div class="faq-list">
+    <details open><summary>Kell építési engedély egy 35 m²-es épülethez?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>[Tamás válasza, röviden és közérthetően.]</p></details>
+    <details><summary>Mennyi idő alatt készül el?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>[Tamás válasza.]</p></details>
+    <details><summary>Hogyan és milyen ütemezésben fizetek?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>[Tamás válasza.]</p></details>
+    <details><summary>Mekkora garanciát vállalnak?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>[Tamás válasza.]</p></details>
+    <details><summary>Az alapozást és a közműbekötést is intézik?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>[Tamás válasza.]</p></details>
+    <details><summary>Milyen messzire vállalnak munkát?<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Bajától nagyjából 100 km-es körzetben dolgozunk, Kecskemét, Szeged és Pécs vonaláig.</p></details>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="quote" id="ajanlat">
+  <svg class="quote-shape" viewBox="0 0 440 380" aria-hidden="true"><polygon points="0,380 0,0 440,380" fill="#9CC077" fill-opacity=".08"/></svg>
+  <div class="sec-head">
+    <div class="kicker on-dark">Ajánlatkérés</div>
+    <h2 class="display h2">Három lépés, egy perc</h2>
+    <p class="lead">24 órán belül telefonon jelentkezünk, és megbeszéljük a részleteket.</p>
+    <div class="call-alt"><span>Inkább hívna?</span><a data-tel href="tel:+36000000000"><span data-tel-text>[+36 XX XXX XXXX]</span></a></div>
+  </div>
+
+  <div class="qcard">
+    <div class="qprog" id="qprog">
+      <div class="row"><span id="stepName">Épület</span><span><span id="stepNum">1</span> / 3</span></div>
+      <div class="bar"><i id="formBar" style="width:33%"></i></div>
+    </div>
+
+    <!-- 1 -->
+    <div class="qstep" id="qs1">
+      <div class="qtitle" id="q1t">Mit építene?</div>
+      <div class="chips" role="group" aria-labelledby="q1t" id="fTypes"></div>
+      <div class="qnav end"><button type="button" class="btn btn-lime" data-go="2">Tovább<span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+    </div>
+
+    <!-- 2 -->
+    <div class="qstep" id="qs2" hidden>
+      <div class="from-cfg" id="fromCfg" hidden><svg viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span>A tervezőből: <strong id="cfgBadge"></strong></span></div>
+      <label class="field">Melyik településen?<input class="in" id="town" type="text" placeholder="pl. Baja" autocomplete="address-level2"></label>
+      <div class="field" style="gap:12px"><span id="whenLbl">Mikorra?</span><div class="chips" role="group" aria-labelledby="whenLbl" id="whenOpts"></div></div>
+      <div class="qnav"><button type="button" class="btn-ghost" data-go="1">Vissza</button><button type="button" class="btn btn-lime" data-go="3">Tovább<span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+    </div>
+
+    <!-- 3 -->
+    <form class="qstep" id="qs3" hidden novalidate>
+      <div class="grid2">
+        <label class="field">Név<input class="in" id="fName" name="nev" type="text" autocomplete="name" required></label>
+        <label class="field">Telefonszám<input class="in" id="fPhone" name="telefon" type="tel" autocomplete="tel" placeholder="+36" required></label>
+      </div>
+      <!-- honeypot (spam ellen) -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+      <label class="consent"><input type="checkbox" id="fConsent" required><span>Elfogadom az <a href="#adatkezeles">adatkezelési tájékoztatót</a>.</span></label>
+      <div class="err" id="fErr" role="alert" hidden>Kérjük, adja meg a nevét és a telefonszámát, és fogadja el a tájékoztatót.</div>
+      <div class="qnav"><button type="button" class="btn-ghost" data-go="2">Vissza</button><button type="submit" class="btn btn-lime" id="fSubmit" style="height:60px;padding:0 10px 0 28px;font-size:16px"><span id="fSubmitText">Ajánlatot kérek</span><span class="dot"><svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+    </form>
+
+    <!-- sent -->
+    <div class="sent" id="qsSent" hidden tabindex="-1">
+      <span class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="#1E1D1B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>
+      <div class="ttl" id="sentTitle">Köszönjük!</div>
+      <p id="sentText"></p>
+      <div class="sum" id="sentSum"></div>
+      <button type="button" class="again" id="fReset">Új ajánlatkérés</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="#top"><svg viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>MODERN KONSTRUKT</span></a>
+      <div class="about">Házépítés és 35 m²-es épületek Baja 100 km-es körzetében.</div>
+    </div>
+    <div class="fcol"><div class="h">Cégadatok</div><div class="strong">MODERN KONSTRUKT Építőipari Kft.</div><div>6503 Baja, Pandur utca 42.</div><div>Cégjegyzékszám: 03-09-135144</div><div>Adószám: 29316469-2-03</div></div>
+    <div class="fcol"><div class="h">Jogi</div><a href="#adatkezeles">Adatkezelési tájékoztató</a><a href="#sutik">Süti-beállítások</a><a href="#impresszum">Impresszum</a></div>
+  </div>
+  <div class="foot-bottom"><div>© <span id="year">2026</span> Modern Konstrukt Kft.</div><div>Weboldal: <a href="https://igzp.hu" target="_blank" rel="noopener">iGZP</a></div></div>
+  <div class="giant" aria-hidden="true">KONSTRUKT</div>
+</footer>
+
+<!-- ============ STICKY CTA (mobil) ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="call" data-tel href="tel:+36000000000" aria-label="Hívás"><svg viewBox="0 0 24 24" fill="none" stroke="#9CC077" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+  <a class="go" href="#ajanlat">Ajánlatot kérek</a>
+</div>
+
+<script>
+/* =========================================================
+   BEÁLLÍTÁSOK – itt kell átírni élesítés előtt
+   ========================================================= */
+const CONFIG = {
+  phoneDisplay: '[+36 XX XXX XXXX]',   // megjelenő telefonszám
+  phoneHref: '+36000000000',           // tel: link (szóköz nélkül)
+  // Űrlap-fogadó végpont (pl. Formspree: 'https://formspree.io/f/xxxxxxx').
+  // Ha üres, az űrlap csak a köszönő képernyőt mutatja, adatot NEM küld.
+  formEndpoint: ''
+};
+
+(function () {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const fmt = (n) => n.toFixed(1).replace('.', ',');
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  /* ---------- telefonszám mindenhová ---------- */
+  $$('[data-tel]').forEach((a) => a.setAttribute('href', 'tel:' + CONFIG.phoneHref));
+  $$('[data-tel-text]').forEach((s) => (s.textContent = CONFIG.phoneDisplay));
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- állapot ---------- */
+  const S = {
+    intent: 'm35', cfgType: 'garazs', cfgSize: 24, cfgFinish: 'kulcs',
+    proc: 0, ba: 50, proj: 0, city: null,
+    step: 1, fType: 'garazs', when: '3 hónapon belül', fromCfg: false, sent: false
+  };
+
+  const TYPES = [
+    { id: 'garazs', label: 'Garázs', ratio: 1.5 },
+    { id: 'hetvegi', label: 'Hétvégi ház', ratio: 1.3 },
+    { id: 'uzlet', label: 'Kis üzlet', ratio: 1.2 }
+  ];
+  const FTYPES = [
+    { id: 'garazs', label: 'Garázs' }, { id: 'hetvegi', label: 'Hétvégi ház' }, { id: 'uzlet', label: 'Kis üzlet' },
+    { id: 'haz', label: 'Családi ház' }, { id: 'egyeb', label: 'Egyéb' }
+  ];
+  const FIN = [{ id: 'szerk', label: 'Szerkezetkész' }, { id: 'kulcs', label: 'Kulcsrakész' }];
+  const STEPS = [
+    { n: '01', t: 'Felmérés', d: 'Kimegyünk a helyszínre, megnézzük a telket, a megközelítést és a közműveket, és meghallgatjuk, mire kell az épület.', dur: '[kb. X nap a hívástól]' },
+    { n: '02', t: 'Ajánlat', d: 'Tételes, írásos ajánlatot kap, amiből látszik, mi mennyibe kerül, és mikorra készülünk el.', dur: '[X munkanapon belül]' },
+    { n: '03', t: 'Kivitelezés', d: 'Ütemterv szerint haladunk, és fotókkal jelezzük, hol tart a munka, így nem kell kijárnia ellenőrizni.', dur: '[X hét]' },
+    { n: '04', t: 'Átadás', d: 'Közösen bejárjuk az épületet, és csak akkor zárjuk le, ha minden rendben van.', dur: '[garancia: X év]' }
+  ];
+  const PROJ = ['[Település] · garázs', '[Település] · hétvégi ház', '[Település] · családi ház'];
+  const CITIES = ['Baja', 'Kalocsa', 'Kiskunhalas', 'Szekszárd', 'Mohács', 'Kecskemét', 'Szeged', 'Pécs'];
+  const WHEN = ['3 hónapon belül', '3–6 hónap múlva', '6–12 hónap múlva', 'Csak tájékozódom'];
+  const STEP_NAMES = ['Épület', 'Helyszín és időpont', 'Elérhetőség'];
+
+  const makeChips = (host, items, cls, onPick) => {
+    host.innerHTML = '';
+    items.forEach((it) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip' + (cls ? ' ' + cls : '');
+      b.dataset.id = it.id; b.textContent = it.label;
+      b.addEventListener('click', () => onPick(it.id));
+      host.appendChild(b);
+    });
+  };
+  const press = (host, attr, val) => $$('button', host).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset[attr] === String(val))));
+
+  /* ---------- mobil menü ---------- */
+  const menuBtn = $('#menuBtn'), mnav = $('#mnav'), menuIcon = $('#menuIcon');
+  const setMenu = (open) => {
+    mnav.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+    menuIcon.setAttribute('d', open ? 'M6 6l12 12M18 6 6 18' : 'M4 8h16M4 16h16');
+  };
+  menuBtn.addEventListener('click', () => setMenu(mnav.hidden));
+  $$('a', mnav).forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !mnav.hidden) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener('click', (e) => { if (!mnav.hidden && !e.target.closest('.site-header')) setMenu(false); });
+
+  /* ---------- HERO ---------- */
+  const heroTabs = $$('.htab');
+  const renderHero = () => {
+    const isHaz = S.intent === 'haz';
+    heroTabs.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.intent === S.intent)));
+    const lines = isHaz ? ['Családi ház.', 'Egy kézben.', 'Kulcsra kész.'] : ['35 m²-ig.', 'Gyorsan.', 'Rendesen.'];
+    $('#heroTitle').innerHTML = lines.map((l) => '<span>' + l + '</span>').join('');
+    $('#heroSub').textContent = isHaz
+      ? 'Új családi házat építünk Baja 100 km-es körzetében, a tervezéstől az átadásig egy kapcsolattartóval.'
+      : 'Garázs, hétvégi ház, kis üzlethelyiség. Tervezze meg 30 másodperc alatt, és kérjen rá ajánlatot.';
+    $('#heroCtaText').textContent = isHaz ? 'Ajánlatot kérek' : 'Megtervezem';
+    $('#heroCta').setAttribute('href', isHaz ? '#ajanlat' : '#konfig');
+  };
+  heroTabs.forEach((b) => b.addEventListener('click', () => { S.intent = b.dataset.intent; renderHero(); }));
+  $('#heroCta').addEventListener('click', () => { if (S.intent === 'haz') goForm({ fType: 'haz', step: 2, fromCfg: false }); });
+  $('#houseCta').addEventListener('click', () => goForm({ fType: 'haz', step: 2, fromCfg: false }));
+
+  /* ---------- KONFIGURÁTOR ---------- */
+  const sizeRange = $('#sizeRange');
+  const isSmall = () => window.matchMedia('(max-width: 760px)').matches;
+  const cfgSummaryText = () => {
+    const t = TYPES.find((x) => x.id === S.cfgType);
+    const f = FIN.find((x) => x.id === S.cfgFinish);
+    return t.label + ' · ' + S.cfgSize + ' m² · ' + f.label;
+  };
+  const renderCfg = () => {
+    const t = TYPES.find((x) => x.id === S.cfgType);
+    press($('#cfgTypes'), 'type', S.cfgType);
+    press($('#cfgFins'), 'fin', S.cfgFinish);
+
+    const w = Math.sqrt(S.cfgSize / t.ratio), l = w * t.ratio;
+    const MOB = isSmall();
+    const px = MOB ? 30 : 40, VBW = MOB ? 310 : 440, VBH = MOB ? 250 : 330;
+    const W = l * px, H = w * px;
+    const x = (VBW - W) / 2, y = (VBH - H) / 2 + 8;
+    const svg = $('#planSvg');
+    svg.setAttribute('viewBox', '0 0 ' + VBW + ' ' + VBH);
+    const room = $('#pRoom');
+    room.setAttribute('x', x); room.setAttribute('y', y); room.setAttribute('width', W); room.setAttribute('height', H);
+    const top = $('#pDimTop'); top.setAttribute('x1', x); top.setAttribute('x2', x + W); top.setAttribute('y1', y - 14); top.setAttribute('y2', y - 14);
+    const left = $('#pDimLeft'); left.setAttribute('x1', x - 14); left.setAttribute('x2', x - 14); left.setAttribute('y1', y); left.setAttribute('y2', y + H);
+    const tl = $('#pTxtL'); tl.setAttribute('x', x + W / 2); tl.setAttribute('y', y - 22); tl.textContent = fmt(l) + ' m';
+    const tw = $('#pTxtW'); tw.setAttribute('x', x - 22); tw.setAttribute('y', y + H / 2); tw.setAttribute('transform', 'rotate(-90 ' + (x - 22) + ' ' + (y + H / 2) + ')'); tw.textContent = fmt(w) + ' m';
+    const ta = $('#pTxtA'); ta.setAttribute('x', x + W / 2); ta.setAttribute('y', y + H / 2); ta.textContent = S.cfgSize + ' m²';
+    $('#planTitle').textContent = 'Alaprajz-vázlat: ' + t.label + ', ' + S.cfgSize + ' m², kb. ' + fmt(l) + ' × ' + fmt(w) + ' m';
+
+    let cap;
+    if (S.cfgType === 'garazs') cap = S.cfgSize < 18 ? 'Kerti tároló vagy műhely' : (S.cfgSize < 28 ? '1 autó, kényelmesen' : '1 autó + műhelysarok');
+    else if (S.cfgType === 'hetvegi') cap = S.cfgSize < 20 ? 'Egylégterű kis ház' : (S.cfgSize < 28 ? 'Szoba + fürdő' : 'Szoba + konyha + fürdő');
+    else cap = S.cfgSize < 20 ? '1–2 fős iroda vagy szalon' : (S.cfgSize < 28 ? 'Kis üzlet vagy rendelő' : 'Üzlet raktárrésszel');
+
+    $('#sizeOut').textContent = S.cfgSize;
+    sizeRange.value = S.cfgSize;
+    sizeRange.setAttribute('aria-valuetext', S.cfgSize + ' négyzetméter');
+    sizeRange.style.setProperty('--p', ((S.cfgSize - 12) / 23 * 100) + '%');
+    $('#stSize').textContent = 'kb. ' + fmt(l) + ' × ' + fmt(w) + ' m';
+    $('#stCap').textContent = cap;
+    $('#cfgSummary').textContent = cfgSummaryText();
+  };
+  $$('#cfgTypes button').forEach((b) => b.addEventListener('click', () => { S.cfgType = b.dataset.type; renderCfg(); }));
+  $$('#cfgFins button').forEach((b) => b.addEventListener('click', () => { S.cfgFinish = b.dataset.fin; renderCfg(); }));
+  sizeRange.addEventListener('input', () => { S.cfgSize = Number(sizeRange.value); renderCfg(); });
+  $('#cfgToForm').addEventListener('click', () => goForm({ fType: S.cfgType, step: 2, fromCfg: true }));
+  let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(renderCfg, 120); });
+
+  /* ---------- FOLYAMAT ---------- */
+  const stepList = $('#stepList');
+  STEPS.forEach((st, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = '<button type="button" class="step-btn"><span class="n">' + st.n + '</span><span class="t">' + st.t + '</span></button>';
+    li.firstChild.addEventListener('click', () => { S.proc = i; renderProc(); });
+    stepList.appendChild(li);
+  });
+  const renderProc = () => {
+    const cur = STEPS[S.proc];
+    $$('.step-btn', stepList).forEach((b, i) => { if (i === S.proc) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+    $('#spN').textContent = cur.n; $('#spT').textContent = cur.t; $('#spD').textContent = cur.d; $('#spDur').textContent = cur.dur;
+    $('#procBar').style.width = ((S.proc + 1) * 25) + '%';
+    $('#procPrev').disabled = S.proc === 0;
+    $('#procNext').disabled = S.proc === STEPS.length - 1;
+  };
+  $('#procPrev').addEventListener('click', () => { S.proc = Math.max(0, S.proc - 1); renderProc(); });
+  $('#procNext').addEventListener('click', () => { S.proc = Math.min(STEPS.length - 1, S.proc + 1); renderProc(); });
+
+  /* ---------- ELŐTTE / UTÁNA ---------- */
+  const baBox = $('#baBox'), baRange = $('#baRange');
+  makeChips($('#projTabs'), PROJ.map((p, i) => ({ id: i, label: 'Projekt ' + (i + 1) })), '', (id) => { S.proj = Number(id); S.ba = 50; renderBa(); });
+  const renderBa = () => {
+    press($('#projTabs'), 'id', S.proj);
+    baBox.style.setProperty('--ba', S.ba + '%');
+    baRange.value = S.ba;
+    $('#projName').textContent = PROJ[S.proj];
+  };
+  const baFromX = (clientX) => {
+    const r = baBox.getBoundingClientRect();
+    S.ba = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+    renderBa();
+  };
+  let dragging = false;
+  baBox.addEventListener('pointerdown', (e) => { dragging = true; baBox.setPointerCapture(e.pointerId); baFromX(e.clientX); });
+  baBox.addEventListener('pointermove', (e) => { if (dragging) baFromX(e.clientX); });
+  ['pointerup', 'pointercancel'].forEach((ev) => baBox.addEventListener(ev, () => { dragging = false; }));
+  baRange.addEventListener('input', () => { S.ba = Number(baRange.value); renderBa(); });
+  baBox.addEventListener('click', () => baRange.focus({ preventScroll: true }));
+
+  /* ---------- TERÜLET ---------- */
+  makeChips($('#cities'), CITIES.map((c) => ({ id: c, label: c })), 'gr', (c) => { S.city = c; renderArea(); });
+  const renderArea = () => {
+    press($('#cities'), 'id', S.city);
+    const out = $('#areaOut');
+    if (!S.city) { out.innerHTML = '<span class="no">Bajától nagyjából 100 km-ig vállalunk munkát.</span>'; return; }
+    out.innerHTML = '<div class="yes"><span><svg viewBox="0 0 24 24" fill="none" stroke="#CFE3BE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Igen, ' + esc(S.city) + ' és környéke a körzetünkben van.</span><a href="#ajanlat" id="areaCta">Ajánlatot kérek</a></div>';
+    $('#areaCta').addEventListener('click', () => { const t = $('#town'); if (!t.value) t.value = S.city; });
+  };
+
+  /* ---------- AJÁNLATKÉRŐ ---------- */
+  const qs = { 1: $('#qs1'), 2: $('#qs2'), 3: $('#qs3') };
+  makeChips($('#fTypes'), FTYPES, 'dk', (id) => { S.fType = id; S.fromCfg = false; renderForm(); });
+  makeChips($('#whenOpts'), WHEN.map((w) => ({ id: w, label: w })), 'dk', (w) => { S.when = w; renderForm(); });
+
+  const renderForm = (focus) => {
+    press($('#fTypes'), 'id', S.fType);
+    press($('#whenOpts'), 'id', S.when);
+    [1, 2, 3].forEach((n) => (qs[n].hidden = S.sent || S.step !== n));
+    $('#qsSent').hidden = !S.sent;
+    $('#stepName').textContent = S.sent ? 'Elküldve' : STEP_NAMES[S.step - 1];
+    $('#stepNum').textContent = S.sent ? 3 : S.step;
+    $('#formBar').style.width = Math.round((S.sent ? 3 : S.step) / 3 * 100) + '%';
+    const showCfg = S.fromCfg && S.step === 2 && !S.sent;
+    $('#fromCfg').hidden = !showCfg;
+    if (showCfg) $('#cfgBadge').textContent = cfgSummaryText();
+    if (focus) {
+      const el = S.sent ? $('#qsSent') : qs[S.step].querySelector('input, button.chip, button');
+      if (el) el.focus({ preventScroll: true });
+    }
+  };
+  function goForm(o) { Object.assign(S, o, { sent: false }); renderForm(); }
+
+  $$('[data-go]').forEach((b) => b.addEventListener('click', () => {
+    S.step = Number(b.dataset.go); $('#fErr').hidden = true; renderForm(true);
+  }));
+
+  const fName = $('#fName'), fPhone = $('#fPhone'), fConsent = $('#fConsent');
+  qs[3].addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = fName.value.trim(), phone = fPhone.value.trim();
+    const okPhone = phone.replace(/\D/g, '').length >= 8;
+    fName.setAttribute('aria-invalid', String(!name));
+    fPhone.setAttribute('aria-invalid', String(!okPhone));
+    if (!name || !okPhone || !fConsent.checked) {
+      const err = $('#fErr');
+      err.textContent = !okPhone && phone ? 'Kérjük, ellenőrizze a telefonszámot.' : 'Kérjük, adja meg a nevét és a telefonszámát, és fogadja el a tájékoztatót.';
+      err.hidden = false; return;
+    }
+    $('#fErr').hidden = true;
+
+    const fLabel = FTYPES.find((f) => f.id === S.fType).label;
+    const town = $('#town').value.trim();
+    const payload = {
+      epulet: fLabel,
+      tervezobol: S.fromCfg ? cfgSummaryText() : '',
+      telepules: town, mikorra: S.when, nev: name, telefon: phone,
+      _gotcha: qs[3].querySelector('[name="_gotcha"]').value
+    };
+
+    if (CONFIG.formEndpoint) {
+      const btn = $('#fSubmit'), txt = $('#fSubmitText');
+      btn.disabled = true; txt.textContent = 'Küldés…';
+      try {
+        const res = await fetch(CONFIG.formEndpoint, {
+          method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+      } catch (err) {
+        const el = $('#fErr');
+        el.innerHTML = 'Az üzenetet most nem sikerült elküldeni. Kérjük, hívjon minket: <a href="tel:' + CONFIG.phoneHref + '" style="color:#fff">' + esc(CONFIG.phoneDisplay) + '</a>';
+        el.hidden = false; btn.disabled = false; txt.textContent = 'Ajánlatot kérek';
+        return;
+      }
+      btn.disabled = false; txt.textContent = 'Ajánlatot kérek';
+    }
+
+    $('#sentTitle').textContent = 'Köszönjük, ' + name + '!';
+    $('#sentText').textContent = '24 órán belül hívjuk a ' + phone + ' számon.';
+    $('#sentSum').textContent = fLabel + (town ? ' · ' + town : '') + ' · ' + S.when;
+    S.sent = true; renderForm(true);
+  });
+
+  $('#fReset').addEventListener('click', () => {
+    qs[3].reset(); $('#town').value = '';
+    [fName, fPhone].forEach((i) => i.removeAttribute('aria-invalid'));
+    Object.assign(S, { sent: false, step: 1, fromCfg: false });
+    renderForm(true);
+  });
+
+  /* ---------- sticky CTA elrejtése az űrlapnál ---------- */
+  const sticky = $('#stickyCta');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((ents) => ents.forEach((en) => sticky.classList.toggle('hide', en.isIntersecting)), { threshold: 0.15 })
+      .observe($('#ajanlat'));
+  }
+
+  /* ---------- első render ---------- */
+  renderHero(); renderCfg(); renderProc(); renderBa(); renderArea(); renderForm();
+})();
+</script>
+</body>
+</html>
