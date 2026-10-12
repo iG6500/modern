@@ -29,6 +29,12 @@ a{color:#111311}a:hover{color:#3F7A2A}
 .mk-btn{transition:background .2s,color .2s}
 .mk-dark:hover{background:#3F7A2A !important}
 .mk-green:hover{background:#2F5F1F !important}
+.mk-col{opacity:0;transition:opacity .7s ease}
+.mk-svc:hover .mk-col,.mk-svc:focus-visible .mk-col{opacity:1}
+@media (hover:none){.mk-svc:active .mk-col{opacity:1}}
+@supports (animation-timeline: view()){@media (hover:none){.mk-col{animation:mkcol linear both;animation-timeline:view();transition:none}.mk-svc:active .mk-col{animation:none;opacity:1}}}
+@keyframes mkcol{0%,32%{opacity:0}46%,58%{opacity:1}72%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.mk-col{transition:none}}
 .mk-img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .mk-svc:hover .mk-img{transform:scale(1.03)}
 .mk-rise{display:block;animation:mkrise 1s cubic-bezier(.2,.7,.2,1) both}
@@ -197,7 +203,10 @@ a{color:#111311}a:hover{color:#3F7A2A}
     <sc-for list="{{services}}" as="s" hint-placeholder-count="4">
       <a href="#ajanlat" onClick="{{s.pick}}" class="mk-svc" style="display: flex; flex-direction: column; gap: 20px; text-decoration: none; color: #111311">
         <span style="display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #E7E9E7">
-          <span class="mk-img mk-cap" style="display: flex; align-items: flex-end; width: 100%; height: 100%; padding: 20px; background: {{s.tone}}; color: #5F6461; font-size: 11px">{{s.photo}}</span>
+          <span class="mk-img" style="position: relative; display: block; width: 100%; height: 100%">
+            <img src="{{s.bw}}" alt="{{s.alt}}" width="1200" height="774" loading="lazy" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+            <img class="mk-col" src="{{s.col}}" alt="" aria-hidden="true" width="1200" height="774" loading="lazy" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+          </span>
         </span>
         <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid #111311">
           <span style="display: flex; align-items: baseline; gap: 18px">
@@ -460,10 +469,10 @@ class Component extends DCLogic {
     var dirTxt = DIRS[Math.round(((cur.deg % 360) + 360) % 360 / 45) % 8];
 
     var services = [
-      { id: 'haz', n: '01', t: 'Családi házak', d: 'Új ház a telektől az átadásig, szerkezetkész vagy kulcsrakész állapotban, egy kapcsolattartóval.', photo: '[Fotó: családi ház]', tone: '#DADDDB' },
-      { id: 'bovites', n: '02', t: 'Bővítés', d: 'Tetőtér-beépítés, oldalszárny, plusz szoba. A meglévő házhoz hibátlanul csatlakozó toldás.', photo: '[Fotó: bővítés]', tone: '#CFD3D0' },
-      { id: 'felujitas', n: '03', t: 'Felújítás', d: 'Régi házból korszerű otthon: szerkezet, gépészet, belső terek, nyílászárók.', photo: '[Fotó: felújítás]', tone: '#CFD3D0' },
-      { id: 'kicsi', n: '04', t: 'Kisebb épületek', d: 'Garázs, hétvégi ház, kis üzlethelyiség 35 m²-ig. Gyors átfutás, egyszerű folyamat.', photo: '[Fotó: garázs / kis épület]', tone: '#DADDDB' }
+      { id: 'haz', n: '01', t: 'Családi házak', d: 'Új ház a telektől az átadásig, szerkezetkész vagy kulcsrakész állapotban, egy kapcsolattartóval.', bw: 'assets/01-csaladi-hazak.webp', col: 'assets/01-csaladi-hazak-szines.webp', alt: 'Családi ház' },
+      { id: 'bovites', n: '02', t: 'Bővítés', d: 'Tetőtér-beépítés, oldalszárny, plusz szoba. A meglévő házhoz hibátlanul csatlakozó toldás.', bw: 'assets/02-bovites.webp', col: 'assets/02-bovites-szines.webp', alt: 'Bővítés' },
+      { id: 'felujitas', n: '03', t: 'Felújítás', d: 'Régi házból korszerű otthon: szerkezet, gépészet, belső terek, nyílászárók.', bw: 'assets/03-felujitas.webp', col: 'assets/03-felujitas-szines.webp', alt: 'Felújítás' },
+      { id: 'kicsi', n: '04', t: 'Kisebb épületek', d: 'Garázs, hétvégi ház, kis üzlethelyiség 35 m²-ig. Gyors átfutás, egyszerű folyamat.', bw: 'assets/04-kisebb-epuletek-garazs.webp', col: 'assets/04-kisebb-epuletek-garazs-szines.webp', alt: 'Kisebb épület, garázs' }
     ].map(function (s) { return Object.assign({}, s, { pick: set({ type: s.id, phase: 'lead' }) }); });
 
     var steps = [
