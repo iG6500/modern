@@ -80,16 +80,12 @@ ul,ol{margin:0;padding:0;list-style:none}
 .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(143,203,110,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(143,203,110,.06) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(80% 80% at 70% 40%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(80% 80% at 70% 40%,#000 20%,transparent 75%)}
 .glow{position:absolute;width:60vw;height:60vw;max-width:900px;max-height:900px;right:-10vw;top:-15vw;background:radial-gradient(circle,rgba(98,160,71,.28),transparent 62%);filter:blur(20px);animation:breathe 9s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(1.08);opacity:.8}}
-.blueprint{position:absolute;right:max(2vw,calc((100vw - 1440px)/2 + 3vw));bottom:9%;width:min(40vw,640px);opacity:.85;height:auto;transition:transform .4s var(--ease);will-change:transform}
-.blueprint path{stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s var(--ease) forwards}
-.bp-green{stroke:var(--green)}
-.bp-grey{stroke:#8a908b}
-.bp-dim{stroke:var(--lime);stroke-width:1.2;opacity:.6}
-.bp-dim path{stroke-width:1.2;animation-delay:1.2s}
-.bp-green path:nth-child(2){animation-delay:.2s}.bp-green path:nth-child(3){animation-delay:.35s}.bp-green path:nth-child(4){animation-delay:.5s}
-.bp-grey path:nth-child(1){animation-delay:.3s}.bp-grey path:nth-child(2){animation-delay:.5s}.bp-grey path:nth-child(3){animation-delay:.65s}.bp-grey path:nth-child(4){animation-delay:.8s}.bp-grey path:nth-child(5){animation-delay:.9s}.bp-grey path:nth-child(6){animation-delay:1s}
+.blueprint{position:absolute;right:max(2vw,calc((100vw - 1440px)/2 + 3vw));bottom:27%;width:min(38vw,600px);opacity:.92;height:auto;transition:transform .4s var(--ease);will-change:transform}
+.blueprint path{stroke-width:2.5;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;fill-opacity:0;animation:draw 1.8s var(--ease) var(--d) forwards,fillin 1s ease 1.9s forwards}
+.blueprint .green{fill:var(--green);stroke:var(--lime)}
+.blueprint .grey{fill:url(#gg);stroke:#c9cdc9}
 @keyframes draw{to{stroke-dashoffset:0}}
-.bp-labels{display:none}
+@keyframes fillin{to{fill-opacity:1;stroke-opacity:0}}
 .hero-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px}
 .hero-copy{display:flex;flex-direction:column;gap:28px;max-width:860px;position:relative;z-index:2}
 .eyebrow-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px}
@@ -424,6 +420,6 @@ body.lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .rv{opacity:1;transform:none}
-  .blueprint path{stroke-dashoffset:0}
+  .blueprint path{stroke-dashoffset:0;fill-opacity:1;stroke-opacity:0}
   .h-display .ln>span{transform:none}
 }
