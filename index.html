@@ -336,91 +336,13 @@ a{color:#111311}a:hover{color:#3F7A2A}
 </section>
 
 <!-- ============ KÖRZET ============ -->
-<section id="korzet" style="margin-top: clamp(96px, 10vw, 160px); background: #151716; color: #FFFFFF; padding: clamp(72px, 8vw, 128px) clamp(20px, 4vw, 48px) clamp(56px, 6vw, 88px); display: flex; flex-direction: column; gap: 56px; overflow: hidden">
-  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 64px; flex-wrap: wrap">
-    <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Kiszállunk<br>önhöz<span style="color: {{accent}}">?</span></h2>
-    <p class="mk-cap" style="max-width: 38ch; line-height: 1.7; color: #B9BEBA">Válassza ki a táblán, merre lakik. Megmutatjuk, milyen messze van, és merre indulunk.</p>
-  </div>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 40px clamp(32px, 5vw, 80px); align-items: center">
-
-    <!-- ÚTJELZŐ TÁBLA -->
-    <div style="justify-self: center; width: 100%; max-width: 560px; display: flex; flex-direction: column; align-items: center">
-      <div style="width: 100%; background: #2E6B26; border-radius: 18px; padding: 10px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.6)">
-        <div style="border: 3px solid #FFFFFF; border-radius: 11px; padding: 18px 10px 10px; display: flex; flex-direction: column">
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 12px 14px; border-bottom: 3px solid #FFFFFF; margin-bottom: 6px">
-            <span style="display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -.02em">
-              <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 30px; padding: 0 6px; background: #FFFFFF; color: #2E6B26; border-radius: 4px; font-size: 16px">MK</span>
-              Baja, innen indulunk
-            </span>
-            <span style="font-weight: 700; font-size: 15px">km</span>
-          </div>
-          <sc-for list="{{signRows}}" as="r" hint-placeholder-count="10">
-            <button type="button" onClick="{{r.pick}}" aria-pressed="{{r.pressed}}" style="display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 48px; padding: 0 12px; border: 0; border-radius: 6px; background: {{r.bg}}; color: {{r.fg}}; font-weight: 700; font-size: 21px; letter-spacing: -.02em; text-align: left; cursor: pointer; transition: background .2s, color .2s">
-              <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="transform: rotate({{r.rot}}); justify-self: center">
-                <path d="M12 3 L19 11 H14.5 V21 H9.5 V11 H5 Z" fill="currentColor"></path>
-              </svg>
-              <span>{{r.n}}</span>
-              <span style="font-variant-numeric: tabular-nums">{{r.km}}</span>
-            </button>
-          </sc-for>
-        </div>
-      </div>
-      <div aria-hidden="true" style="display: flex; gap: 120px">
-        <span style="width: 10px; height: 90px; background: linear-gradient(90deg, #6B706C, #9EA39F 50%, #6B706C)"></span>
-        <span style="width: 10px; height: 90px; background: linear-gradient(90deg, #6B706C, #9EA39F 50%, #6B706C)"></span>
-      </div>
-    </div>
-
-    <!-- EREDMÉNY -->
-    <div style="display: flex; flex-direction: column; gap: 32px">
-      <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
-        <div aria-hidden="true" style="position: relative; width: 132px; height: 132px; flex: none; border-radius: 50%; border: 1.5px solid #3A3E3B">
-          <span class="mk-cap" style="position: absolute; top: 6px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #8A8F8C">É</span>
-          <span class="mk-cap" style="position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #8A8F8C">D</span>
-          <span class="mk-cap" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #8A8F8C">Ny</span>
-          <span class="mk-cap" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #8A8F8C">K</span>
-          <svg viewBox="0 0 100 100" style="position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate({{selRot}}); transition: transform 1s cubic-bezier(.3,1.4,.5,1)">
-            <path d="M50 14 L58 50 H42 Z" fill="{{accent}}"></path>
-            <path d="M50 86 L58 50 H42 Z" fill="#3A3E3B"></path>
-            <circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle>
-          </svg>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 4px">
-          <span class="mk-cap" style="font-size: 12px; color: #8A8F8C">{{selHead}}</span>
-          <span style="font-weight: 700; font-size: clamp(56px, 6vw, 96px); line-height: .9; letter-spacing: -.06em">{{selKm}}<span style="color: {{accent}}; font-size: .45em; letter-spacing: -.02em; margin-left: .15em">km</span></span>
-          <span style="font-size: 17px; color: #D6DAD7">{{selTime}}</span>
-        </div>
-      </div>
-
-      <!-- ÚT: furgon -->
-      <div style="display: flex; flex-direction: column; gap: 10px">
-        <div style="position: relative; height: 64px">
-          <div style="position: absolute; left: 0; right: 0; bottom: 14px; height: 18px; background: #2A2D2B"></div>
-          <div style="position: absolute; left: 0; right: 0; bottom: 22px; height: 2px; background: repeating-linear-gradient(90deg, #FFFFFF 0 18px, transparent 18px 34px); opacity: .55"></div>
-          <div style="position: absolute; left: 0; bottom: 14px; height: 18px; width: {{vanPct}}; background: {{accent}}; opacity: .22; transition: width 1.3s cubic-bezier(.2,.7,.2,1)"></div>
-          <svg width="58" height="34" viewBox="0 0 58 34" aria-hidden="true" style="position: absolute; bottom: 20px; left: {{vanPct}}; transform: translateX(-50%); transition: left 1.3s cubic-bezier(.2,.7,.2,1)">
-            <path d="M2 6 H36 V26 H2 Z" fill="#FFFFFF"></path>
-            <path d="M36 12 H47 L55 20 V26 H36 Z" fill="#FFFFFF"></path>
-            <path d="M39 14 H46 L51 19 H39 Z" fill="#151716"></path>
-            <path d="M6 13 H32" stroke="{{accent}}" stroke-width="3"></path>
-            <circle cx="12" cy="27" r="5" fill="#151716" stroke="#FFFFFF" stroke-width="2.5"></circle>
-            <circle cx="45" cy="27" r="5" fill="#151716" stroke="#FFFFFF" stroke-width="2.5"></circle>
-          </svg>
-          <span style="position: absolute; right: 0; bottom: 4px; width: 3px; height: 46px; background: {{accent}}"></span>
-        </div>
-        <div class="mk-cap" style="display: flex; justify-content: space-between; font-size: 11px; color: #8A8F8C">
-          <span>Baja · 0 km</span><span>50 km</span><span style="color: {{accent}}">100 km határ</span>
-        </div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid #2E322F">
-        <p style="font-size: 20px; letter-spacing: -.02em; line-height: 1.35">{{selMsg}}</p>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap">
-          <a href="#ajanlat" onClick="{{cityToQuiz}}" class="mk-btn mk-green mk-cap" style="display: inline-flex; align-items: center; gap: 24px; min-height: 58px; padding: 0 24px; background: #3F7A2A; color: #FFFFFF; text-decoration: none; font-weight: 600">{{selCta}} <span aria-hidden="true">→</span></a>
-        </div>
-        <p style="font-size: 13px; color: #8A8F8C">Nincs a táblán a települése? 100 km-en belül oda is kimegyünk, a visszahíváskor egyeztetjük. A távolság légvonalban, a menetidő becslés.</p>
-      </div>
+<section id="korzet" style="margin-top: clamp(96px, 10vw, 160px); background: #151716; color: #FFFFFF; padding: clamp(72px, 8vw, 128px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px clamp(32px, 6vw, 96px); align-items: end">
+  <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: 1; letter-spacing: -.06em; text-transform: uppercase">Baja<span style="color: {{accent}}">.</span><br>És 100 km<span style="color: {{accent}}">.</span></h2>
+  <div style="display: flex; flex-direction: column; gap: 28px">
+    <p style="font-size: clamp(20px, 1.8vw, 26px); line-height: 1.4; letter-spacing: -.02em; color: #E4E7E5; max-width: 30ch">Baján és a környező 100 km-es körzetben dolgozunk. Nem biztos, hogy a települése belefér? Keressen bátran, beszéljük meg.</p>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap">
+      <a href="#ajanlat" class="mk-btn mk-green mk-cap" style="display: inline-flex; align-items: center; gap: 24px; min-height: 58px; padding: 0 24px; background: #3F7A2A; color: #FFFFFF; text-decoration: none; font-weight: 600">Visszahívást kérek <span aria-hidden="true">→</span></a>
+      <a href="tel:+36305328127" class="mk-cap" style="display: inline-flex; align-items: center; min-height: 58px; padding: 0 24px; border: 1px solid #5F6461; color: #FFFFFF; text-decoration: none; font-weight: 600">+36 30 532 8127</a>
     </div>
   </div>
 </section>
