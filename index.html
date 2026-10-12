@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Modern Konstrukt – Családi házak, bővítés, felújítás Baja körzetében</title>
-<meta name="description" content="Teljeskörű építőipari kivitelezés Baja 100 km-es körzetében: családi házak, bővítés, felújítás. Mintatervek műszaki tartalommal és árakkal, egy kapcsolattartóval.">
+<meta name="description" content="Teljeskörű építőipari kivitelezés Baja 100 km-es körzetében: családi házak, bővítés, felújítás. Kérjen visszahívást, 24 órán belül jelentkezünk.">
 <meta name="theme-color" content="#0f1511">
 <meta property="og:title" content="Modern Konstrukt – Teljeskörű építőipari kivitelezés">
-<meta property="og:description" content="Családi házak, bővítés, felújítás. Mintatervek műszaki tartalommal és árakkal.">
+<meta property="og:description" content="Családi házak, bővítés, felújítás. Kérjen visszahívást 24 órán belül.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/mark.png">
 <link rel="preload" href="assets/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip" href="#mintatervek">Ugrás a tartalomhoz</a>
+<a class="skip" href="#szolgaltatasok">Ugrás a tartalomhoz</a>
 
 <!-- ============ HEADER ============ -->
 <header class="hdr" id="hdr">
@@ -24,11 +24,11 @@
       <span class="brand-t"><b>Modern</b> Konstrukt</span>
     </a>
     <nav class="nav" aria-label="Fő menü">
-      <a href="#mintatervek">Mintatervek</a>
       <a href="#szolgaltatasok">Szolgáltatások</a>
       <a href="#folyamat">Így dolgozunk</a>
       <a href="#munkak">Munkáink</a>
       <a href="#korzet">Körzet</a>
+      <a href="#ajanlat" data-go-form>Kapcsolat</a>
     </nav>
     <div class="hdr-cta">
       <a class="btn btn-ghost hide-sm" data-phone-link href="tel:+36305328127">
@@ -69,9 +69,19 @@
       </div>
       <h1 id="heroTitle" class="h-display"></h1>
       <p class="lead" id="heroSub"></p>
-      <div class="hero-actions">
-        <a class="btn btn-solid btn-lg" id="heroCta" href="#mintatervek">Mintatervek megnézése <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn-link" href="#ajanlat" data-go-form>Vagy kérjen ajánlatot</a>
+      <form class="lead-mini" id="heroForm" novalidate>
+        <div class="lm-row">
+          <label class="lm-f"><span class="sr">Név</span><input class="lm-in" id="hName" type="text" autocomplete="name" placeholder="Az Ön neve" required></label>
+          <label class="lm-f"><span class="sr">Telefonszám</span><input class="lm-in" id="hPhone" type="tel" autocomplete="tel" placeholder="Telefonszám" required></label>
+          <button type="submit" class="btn btn-solid btn-lg" id="hBtn">Visszahívást kérek <span class="arr" aria-hidden="true">→</span></button>
+        </div>
+        <label class="check check-sm"><input type="checkbox" id="hConsent"><i></i><span>Elfogadom az <a href="#" target="_blank" rel="noopener">adatkezelési tájékoztatót</a>.</span></label>
+        <p class="err" id="hErr" role="alert" hidden></p>
+        <p class="lm-or">Inkább hívna? <a data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a></p>
+      </form>
+      <div class="lead-done" id="heroDone" hidden>
+        <div class="done-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
+        <div><b id="heroDoneT">Köszönjük!</b><p id="heroDoneP"></p></div>
       </div>
       <ul class="hero-chips" id="heroChips"></ul>
     </div>
@@ -100,24 +110,6 @@
   </div>
 </section>
 
-<!-- ============ MINTATERVEK ============ -->
-<section class="sec sec-light" id="mintatervek">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="rv">
-        <span class="eyebrow dark">Mintatervek</span>
-        <h2 class="h-sec">Válasszon tervet. Lássa, mi van benne, és mennyibe kerül.</h2>
-      </div>
-      <p class="sec-lead rv">Minden mintatervünkhöz tartozik pontos műszaki tartalom és irányár. Nyissa meg a terveket, váltson szerkezetkész és kulcsrakész átadás között, és az ár azonnal frissül. A telekhez igazítást és a végleges árat felmérés után, tételes ajánlatban adjuk meg.</p>
-    </div>
-
-    <div class="filters rv" id="planFilters" role="tablist" aria-label="Mintatervek szűrése"></div>
-    <div class="plan-grid" id="planGrid" aria-live="polite"></div>
-
-    <p class="note rv">Az árak tájékoztató jellegű irányárak. A tényleges költség a telek adottságaitól, a választott anyagoktól és az egyedi igényektől függően változhat.</p>
-  </div>
-</section>
-
 <!-- ============ SZOLGÁLTATÁSOK ============ -->
 <section class="sec sec-dark" id="szolgaltatasok">
   <div class="wrap">
@@ -133,26 +125,26 @@
       <article class="b-card b-big rv" data-cat="haz">
         <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 22 24 6l19 16"/><path d="M10 20v22h28V20"/><path d="M20 42V30h8v12"/></svg></div>
         <h3>Családi házak</h3>
-        <p>Új ház a telek kiválasztásától az átadásig, mintatervből vagy egyedi tervből. Szerkezetkész vagy kulcsrakész állapotban.</p>
-        <button class="b-link" data-filter="haz">Családi ház mintatervek <span aria-hidden="true">→</span></button>
+        <p>Új ház a telek kiválasztásától az átadásig. Szerkezetkész vagy kulcsrakész állapotban, egy kapcsolattartóval.</p>
+        <button class="b-link" data-type="haz">Ajánlatot kérek <span aria-hidden="true">→</span></button>
       </article>
       <article class="b-card rv" data-cat="bovites">
         <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 40V22l12-10 12 10v18z"/><path d="M30 28h12v12H30"/><path d="M36 22v12M30 28v0"/></svg></div>
         <h3>Bővítés</h3>
         <p>Tetőtér-beépítés, oldalszárny, plusz szoba. A meglévő házhoz hibátlanul csatlakozó toldás.</p>
-        <button class="b-link" data-filter="bovites">Bővítési tervek <span aria-hidden="true">→</span></button>
+        <button class="b-link" data-type="bovites">Ajánlatot kérek <span aria-hidden="true">→</span></button>
       </article>
       <article class="b-card rv" data-cat="felujitas">
         <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M30 8a10 10 0 0 0-9 14L8 35l5 5 13-13a10 10 0 0 0 14-9l-6 6-5-1-1-5z"/></svg></div>
         <h3>Felújítás</h3>
         <p>Régi házból korszerű otthon: szerkezet, gépészet, belső terek, nyílászárók.</p>
-        <button class="b-link" data-filter="felujitas">Felújítási tervek <span aria-hidden="true">→</span></button>
+        <button class="b-link" data-type="felujitas">Ajánlatot kérek <span aria-hidden="true">→</span></button>
       </article>
       <article class="b-card b-wide rv" data-cat="kicsi">
         <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 40V20l18-10 18 10v20z"/><path d="M14 40V26h20v14"/></svg></div>
         <h3>Kisebb épületek, 35 m²-ig</h3>
         <p>Garázs, hétvégi ház, kis üzlethelyiség. Gyors átfutás, egyszerű folyamat.</p>
-        <button class="b-link" data-filter="kicsi">Kisebb épület tervek <span aria-hidden="true">→</span></button>
+        <button class="b-link" data-type="kicsi">Ajánlatot kérek <span aria-hidden="true">→</span></button>
       </article>
     </div>
 
@@ -178,6 +170,13 @@
       <ol class="proc-list" id="procList"></ol>
       <div class="proc-panel" id="procPanel" aria-live="polite"></div>
     </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-in rv">
+    <div><h3>Kezdjük a felméréssel.</h3><p>24 órán belül visszahívjuk, és egyeztetünk egy időpontot a helyszínre.</p></div>
+    <div class="cta-btns"><a class="btn btn-lime btn-lg" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-lg" data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a></div>
   </div>
 </section>
 
@@ -217,6 +216,13 @@
   </div>
 </section>
 
+<section class="cta-band">
+  <div class="wrap cta-in rv">
+    <div><h3>Beszéljünk a tervéről.</h3><p>Mondja el, mit építene, és tételes, írásos ajánlatot kap.</p></div>
+    <div class="cta-btns"><a class="btn btn-lime btn-lg" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-lg" data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a></div>
+  </div>
+</section>
+
 <!-- ============ TAMÁS ============ -->
 <section class="sec sec-light" id="tamas">
   <div class="wrap quote">
@@ -237,6 +243,11 @@
       <span class="eyebrow">Ajánlatkérés</span>
       <h2 class="h-sec">Három lépés,<br>egy perc.</h2>
       <p class="sec-lead">24 órán belül telefonon jelentkezünk, és megbeszéljük a részleteket.</p>
+      <ul class="trust">
+        <li>24 órán belül visszahívjuk</li>
+        <li>Helyszíni felmérés, tételes írásos ajánlat</li>
+        <li>Egy kapcsolattartó az átadásig</li>
+      </ul>
       <div class="call-box">
         <small>Inkább hívna?</small>
         <a data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a>
@@ -252,8 +263,7 @@
       <div class="step" data-step="1">
         <h3>Mit építene?</h3>
         <div class="chips chips-dark" id="fTypes" role="group" aria-label="Épület típusa"></div>
-        <div class="plan-badge" id="planBadge" hidden></div>
-        <div class="form-nav"><span></span><button type="button" class="btn btn-lime" data-next>Tovább <span class="arr">→</span></button></div>
+                <div class="form-nav"><span></span><button type="button" class="btn btn-lime" data-next>Tovább <span class="arr">→</span></button></div>
       </div>
 
       <div class="step" data-step="2" hidden>
@@ -314,16 +324,7 @@
   <a class="btn btn-solid" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr">→</span></a>
 </div>
 
-<!-- ============ TERV RÉSZLETEK (fiók) ============ -->
-<div class="drawer-wrap" id="drawerWrap" hidden>
-  <div class="scrim" data-close></div>
-  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" tabindex="-1">
-    <button class="d-close" data-close aria-label="Bezárás"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <div class="d-body" id="dBody"></div>
-  </aside>
-</div>
-
-<script src="plans.js"></script>
+<script src="config.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
