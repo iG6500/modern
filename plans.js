@@ -11,9 +11,9 @@
  * finishes: átadási állapotok, m2 = Ft / m² irányár
  */
 window.MK_CONFIG = {
-  phone: '+36 XX XXX XXXX',          // TODO: valós telefonszám
-  phoneHref: 'tel:+36000000000',     // TODO: valós telefonszám (tel: formátum)
-  email: '',                         // TODO: ajánlatkérések címzettje (ha nincs űrlapszolgáltatás)
+  phone: '+36 30 532 8127',
+  phoneHref: 'tel:+36305328127',
+  email: 'modern.konstrukt@gmail.com',
   formEndpoint: ''                   // TODO: pl. https://formspree.io/f/xxxxxxx – ha kitöltött, ide megy a POST
 };
 
