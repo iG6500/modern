@@ -1,330 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Modern Konstrukt – Családi házak, bővítés, felújítás Baja körzetében</title>
-<meta name="description" content="Teljeskörű építőipari kivitelezés Baja 100 km-es körzetében: családi házak, bővítés, felújítás. Kérjen visszahívást, 24 órán belül jelentkezünk.">
-<meta name="theme-color" content="#0f1511">
-<meta property="og:title" content="Modern Konstrukt – Teljeskörű építőipari kivitelezés">
-<meta property="og:description" content="Családi házak, bővítés, felújítás. Kérjen visszahívást 24 órán belül.">
-<meta property="og:type" content="website">
+<title>Modern Konstrukt – Családi ház, bővítés, felújítás Baja körzetében</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Teljeskörű építőipari kivitelezés Baja 100 km-es körzetében: családi ház, bővítés, felújítás. Kérjen visszahívást, 24 órán belül jelentkezünk.">
+<meta name="theme-color" content="#111311">
 <link rel="icon" type="image/png" href="assets/mark.png">
-<link rel="preload" href="assets/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<script src="assets/react.min.js"></script>
+<script src="assets/react-dom.min.js"></script>
+<script src="assets/lead.js"></script>
+<script src="assets/dc-runtime.js"></script>
 </head>
 <body>
-<a class="skip" href="#szolgaltatasok">Ugrás a tartalomhoz</a>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#111311}a:hover{color:#3F7A2A}
+.mk *{box-sizing:border-box}
+.mk h1,.mk h2,.mk h3,.mk p{margin:0}
+.mk input,.mk button{font:inherit}
+.mk ::placeholder{color:#8A8F8C}
+.mk-cap{text-transform:uppercase;letter-spacing:.14em;font-size:13px;font-weight:500}
+.mk-ul{text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:4px;transition:color .2s,border-color .2s}
+.mk-btn{transition:background .2s,color .2s}
+.mk-dark:hover{background:#3F7A2A !important}
+.mk-green:hover{background:#2F5F1F !important}
+.mk-img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.mk-svc:hover .mk-img{transform:scale(1.03)}
+.mk-rise{display:block;animation:mkrise 1s cubic-bezier(.2,.7,.2,1) both}
+.mk-rise.d2{animation-delay:.1s}.mk-rise.d3{animation-delay:.2s}
+@keyframes mkrise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.mk input:focus-visible,.mk button:focus-visible,.mk a:focus-visible{outline:2px solid #3F7A2A;outline-offset:3px}
+.mk-range{-webkit-appearance:none;appearance:none;background:transparent;position:absolute;inset:0;width:100%;height:100%;margin:0;cursor:ew-resize;opacity:0}
+.mk-mbar{display:none}
+@media (max-width:720px){.mk-mbar{display:flex}.mk-hide-sm{display:none !important}}
+@media (max-width:720px){.mk h2{font-size:clamp(34px,10.4vw,52px) !important}.mk h1{font-size:clamp(64px,19vw,90px) !important}.mk-phcap{display:none}#top{padding-top:56px}}
+@media (prefers-reduced-motion:reduce){.mk-rise{animation:none}}
+</style>
+</helmet>
 
-<!-- ============ HEADER ============ -->
-<header class="hdr" id="hdr">
-  <div class="hdr-in">
-    <a class="brand" href="#top" aria-label="Modern Konstrukt – kezdőlap">
-      <img src="assets/mark.png" alt="" width="54" height="32">
-      <span class="brand-t"><b>Modern</b> Konstrukt</span>
-    </a>
-    <nav class="nav" aria-label="Fő menü">
-      <a href="#szolgaltatasok">Szolgáltatások</a>
-      <a href="#folyamat">Így dolgozunk</a>
-      <a href="#munkak">Munkáink</a>
-      <a href="#korzet">Körzet</a>
-      <a href="#ajanlat" data-go-form>Kapcsolat</a>
-    </nav>
-    <div class="hdr-cta">
-      <a class="btn btn-ghost hide-sm" data-phone-link href="tel:+36305328127">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-        <span data-phone>+36 30 532 8127</span>
-      </a>
-      <a class="btn btn-solid" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr" aria-hidden="true">→</span></a>
-    </div>
-  </div>
+<div class="mk" style="font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #111311; background: #FFFFFF; font-size: 17px; line-height: 1.55">
+
+<!-- ============ FEJLÉC ============ -->
+<header style="background: #FFFFFF; padding: 36px clamp(20px, 4vw, 48px) 32px; display: flex; flex-direction: column; align-items: center; gap: 26px; border-bottom: 1px solid #ECEEEC">
+  <a href="#top" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #111311">
+    <img src="assets/mark.png" alt="" style="height: 34px; width: auto">
+    <span style="font-weight: 800; font-size: clamp(26px, 2.6vw, 36px); letter-spacing: -.055em; line-height: 1; text-transform: uppercase">Modern<span style="color: #3F7A2A">Konstrukt</span></span>
+  </a>
+  <nav aria-label="Fő navigáció" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px clamp(18px, 3.4vw, 52px)">
+    <a class="mk-cap mk-hide-sm" href="#szolgaltatasok" style="text-decoration: none; color: #3E423F">Szolgáltatások</a>
+    <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
+    <a class="mk-cap mk-hide-sm" href="#munkak" style="text-decoration: none; color: #3E423F">Munkáink</a>
+    <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
+    <a class="mk-cap mk-hide-sm" href="#folyamat" style="text-decoration: none; color: #3E423F">Folyamat</a>
+    <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
+    <a class="mk-cap mk-hide-sm" href="#korzet" style="text-decoration: none; color: #3E423F">Körzet</a>
+    <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
+    <a class="mk-cap" href="#ajanlat" style="text-decoration: none; color: #3F7A2A; font-weight: 700">Ajánlatkérés</a>
+  </nav>
 </header>
 
-<main id="top">
-
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="grid-lines"></div>
-    <div class="glow"></div>
-    <svg class="blueprint" viewBox="0 0 660 385" role="presentation" fill-rule="evenodd">
-  <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b7bbb7"/><stop offset="1" stop-color="#868b87"/></linearGradient></defs>
-  <g>
-    <path pathLength="1" class="green" style="--d:0.00s" d="M18 247L18 373L339 372L339 350L60 348L60 248L170 156L170 121Z"/>
-    <path pathLength="1" class="green" style="--d:0.18s" d="M259 13L179 79L180 334L195 334L195 101L230 70L233 71L233 333L259 334Z"/>
-    <path pathLength="1" class="grey" style="--d:0.36s" d="M365 348L365 373L635 373L635 348Z"/>
-    <path pathLength="1" class="grey" style="--d:0.54s" d="M365 211L365 334L379 334L380 221L368 211Z"/>
-    <path pathLength="1" class="grey" style="--d:0.72s" d="M365 151L365 178L566 332L580 334L580 313Z"/>
-    <path pathLength="1" class="grey" style="--d:0.90s" d="M307 107L308 334L352 334L352 140L310 107Z"/>
-    <path pathLength="1" class="grey" style="--d:1.08s" d="M277 21L277 51L444 179L443 193L465 209L465 163Z"/>
-  </g>
-</svg>
-  </div>
+<section id="top" style="position: relative; min-height: 900px; background: #5E635F; color: #FFFFFF; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden">
+  <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(17,19,17,0) 40%, rgba(17,19,17,.45) 100%)"></div>
+  <div aria-hidden="true" style="position: absolute; right: 0; top: 0; bottom: 0; width: 18%; background: #464A47"></div>
+  <span class="mk-cap mk-phcap" style="position: absolute; left: clamp(20px, 4vw, 48px); top: 28px; font-size: 12px; color: #D8DCD9">[Fotó: kész ház / homlokzat, fekete-fehér, teljes szélesség]</span>
 
-  <div class="wrap hero-in">
-    <div class="hero-copy">
-      <div class="eyebrow-row">
-        <span class="eyebrow">Mit építene?</span>
-        <div class="seg" role="group" aria-label="Érdeklődés" id="heroTabs"></div>
+  <div style="position: relative; padding: 0 clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 40px; align-items: end">
+    <div style="display: flex; flex-direction: column; gap: 40px">
+      <h1 style="font-weight: 700; font-size: clamp(76px, 11.5vw, 188px); line-height: .84; letter-spacing: -.065em; text-transform: uppercase">
+        <span class="mk-rise">Alap<span style="color: {{accent}}">.</span></span>
+        <span class="mk-rise d2">Falak<span style="color: {{accent}}">.</span></span>
+        <span class="mk-rise d3">Kulcs<span style="color: {{accent}}">.</span></span>
+      </h1>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 48px; flex-wrap: wrap">
+        <p class="mk-cap" style="max-width: 38ch; line-height: 1.6; color: #F1F3F1">Családi ház, bővítés, felújítás Baja 100 km-es körzetében. Egy cég, egy felelős az alapozástól a kulcsátadásig.</p>
+        <a class="mk-cap mk-ul" href="#munkak" style="color: #FFFFFF; font-weight: 600">Munkáink →</a>
       </div>
-      <h1 id="heroTitle" class="h-display"></h1>
-      <p class="lead" id="heroSub"></p>
-      <form class="lead-mini" id="heroForm" novalidate>
-        <div class="lm-row">
-          <label class="lm-f"><span class="sr">Név</span><input class="lm-in" id="hName" type="text" autocomplete="name" placeholder="Az Ön neve" required></label>
-          <label class="lm-f"><span class="sr">Telefonszám</span><input class="lm-in" id="hPhone" type="tel" autocomplete="tel" placeholder="Telefonszám" required></label>
-          <button type="submit" class="btn btn-solid btn-lg" id="hBtn">Visszahívást kérek <span class="arr" aria-hidden="true">→</span></button>
-        </div>
-        <label class="check check-sm"><input type="checkbox" id="hConsent"><i></i><span>Elfogadom az <a href="#" target="_blank" rel="noopener">adatkezelési tájékoztatót</a>.</span></label>
-        <p class="err" id="hErr" role="alert" hidden></p>
-        <p class="lm-or">Inkább hívna? <a data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a></p>
-      </form>
-      <div class="lead-done" id="heroDone" hidden>
-        <div class="done-ic" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
-        <div><b id="heroDoneT">Köszönjük!</b><p id="heroDoneP"></p></div>
-      </div>
-      <ul class="hero-chips" id="heroChips"></ul>
     </div>
 
-    <a class="hero-card" href="#munkak">
-      <div class="ph ph-sm"><span>[Fotó]</span></div>
-      <div class="hero-card-t">
-        <span class="live"><i class="pulse"></i>Friss munka</span>
-        <b>[Település] · családi ház</b>
-        <small>Nézze meg előtte–utána</small>
-      </div>
-      <span class="circ" aria-hidden="true">→</span>
-    </a>
+    <!-- LEAD PANEL -->
+    <div id="ajanlat" style="justify-self: end; width: 100%; max-width: 480px; background: #FFFFFF; color: #111311; padding: clamp(24px, 2.6vw, 36px); display: flex; flex-direction: column; gap: 22px; scroll-margin-top: 24px">
 
-    <div class="scroll-cue" aria-hidden="true"><i></i><span>Görgessen</span></div>
+      <sc-if value="{{isLead}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span class="mk-cap" style="color: #3F7A2A; font-size: 12px">Ingyenes helyszíni felmérés</span>
+            <h2 style="font-weight: 700; font-size: 32px; letter-spacing: -.045em; line-height: 1">Visszahívjuk 24 órán belül.</h2>
+          </div>
+          <div role="group" aria-label="Mit építene?" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px">
+            <sc-for list="{{types}}" as="t" hint-placeholder-count="4">
+              <button type="button" class="mk-btn" onClick="{{t.pick}}" aria-pressed="{{t.pressed}}" style="min-height: 48px; padding: 0 14px; border: 1px solid {{t.bd}}; background: {{t.bg}}; color: {{t.fg}}; font-size: 15px; font-weight: 500; text-align: left; cursor: pointer">{{t.label}}</button>
+            </sc-for>
+          </div>
+          <label style="display: flex; flex-direction: column; gap: 8px">
+            <span class="mk-cap" style="font-size: 12px; color: #5F6461">Telefonszám</span>
+            <input type="tel" inputmode="tel" autocomplete="tel" value="{{phone}}" onChange="{{setPhone}}" placeholder="+36 30 123 4567" style="min-height: 54px; padding: 0 2px; border: 0; border-bottom: 1.5px solid {{phoneBd}}; background: transparent; color: #111311; font-size: 22px; font-weight: 500; letter-spacing: -.02em; outline: none">
+          </label>
+          <label style="display: flex; gap: 10px; align-items: center; font-size: 14px; color: #5F6461; cursor: pointer">
+            <input type="checkbox" checked="{{consent}}" onChange="{{toggleConsent}}" style="width: 18px; height: 18px; margin: 0; accent-color: #3F7A2A; flex: none">
+            <span>Elfogadom az <a href="#" style="color: #111311">adatkezelési tájékoztatót</a>.</span>
+          </label>
+          <sc-if value="{{err}}">
+            <p role="alert" style="font-size: 14px; color: #B3261E">Adjon meg egy telefonszámot, és fogadja el a tájékoztatót.</p>
+          </sc-if>
+          <button type="button" class="mk-btn mk-green mk-cap" onClick="{{submit}}" style="min-height: 60px; border: 0; background: #3F7A2A; color: #FFFFFF; font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; cursor: pointer">Visszahívást kérek <span aria-hidden="true">→</span></button>
+          <a href="tel:+36305328127" style="font-size: 14px; color: #5F6461; text-decoration: none">Inkább hívna? <strong style="color: #111311; font-weight: 600">+36 30 532 8127</strong></a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isQ}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span class="mk-cap" style="color: #3F7A2A; font-size: 12px">Megvan a száma</span>
+            <h2 style="font-weight: 700; font-size: 26px; letter-spacing: -.04em; line-height: 1.05">Három gyors kérdés, hogy felkészülten hívjuk.</h2>
+          </div>
+          <sc-if value="{{sendErr}}">
+            <p role="alert" style="font-size: 14px; color: #B3261E">Az elküldés nem sikerült. Kérjük, hívjon: <a href="tel:+36305328127" style="color: #B3261E; font-weight: 600">+36 30 532 8127</a></p>
+          </sc-if>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span class="mk-cap" style="font-size: 12px; color: #5F6461">Alapterület</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              <sc-for list="{{sizes}}" as="c" hint-placeholder-count="4">
+                <button type="button" class="mk-btn" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="min-height: 44px; padding: 0 14px; border: 1px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}; font-size: 14px; cursor: pointer">{{c.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <span class="mk-cap" style="font-size: 12px; color: #5F6461">Mikor kezdené?</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              <sc-for list="{{whens}}" as="c" hint-placeholder-count="4">
+                <button type="button" class="mk-btn" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="min-height: 44px; padding: 0 14px; border: 1px solid {{c.bd}}; background: {{c.bg}}; color: {{c.fg}}; font-size: 14px; cursor: pointer">{{c.label}}</button>
+              </sc-for>
+            </div>
+          </div>
+          <label style="display: flex; flex-direction: column; gap: 8px">
+            <span class="mk-cap" style="font-size: 12px; color: #5F6461">Település</span>
+            <input type="text" value="{{town}}" onChange="{{setTown}}" placeholder="pl. Baja" autocomplete="address-level2" style="min-height: 48px; padding: 0 2px; border: 0; border-bottom: 1.5px solid #111311; background: transparent; color: #111311; font-size: 19px; outline: none">
+          </label>
+          <div style="display: flex; gap: 6px">
+            <button type="button" class="mk-cap" onClick="{{finish}}" style="flex: 1; min-height: 54px; border: 1px solid #D5D8D6; background: #FFFFFF; color: #5F6461; font-size: 13px; cursor: pointer">Kihagyom</button>
+            <button type="button" class="mk-btn mk-dark mk-cap" onClick="{{finish}}" style="flex: 1.4; min-height: 54px; border: 0; background: #111311; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer">Elküldöm →</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isDone}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <span class="mk-cap" style="color: #3F7A2A; font-size: 12px">Köszönjük</span>
+          <h2 style="font-weight: 700; font-size: 34px; letter-spacing: -.05em; line-height: .98">24 órán belül hívjuk<span style="color: {{accent}}">.</span></h2>
+          <p style="color: #5F6461">Egyeztetünk egy időpontot az ingyenes helyszíni felmérésre, utána tételes, írásos ajánlatot kap.</p>
+          <p style="font-size: 14px; color: #3E423F; padding-top: 14px; border-top: 1px solid #ECEEEC">{{summary}}</p>
+          <button type="button" class="mk-cap mk-ul" onClick="{{reset}}" style="align-self: flex-start; min-height: 44px; border: 0; border-bottom: 1.5px solid #111311; padding: 0 0 4px; background: none; color: #111311; font-size: 12px; cursor: pointer">Új ajánlatkérés</button>
+        </div>
+      </sc-if>
+    </div>
   </div>
 </section>
 
-<!-- ============ STATS ============ -->
-<section class="stats">
-  <div class="wrap stats-in">
-    <div class="stat rv"><b><span data-count="100">100</span> km</b><span>körzet Baja körül</span></div>
-    <div class="stat rv"><b><span data-count="24">24</span> óra</b><span>alatt visszahívjuk</span></div>
-    <div class="stat rv"><b><span data-count="1">1</span></b><span>kapcsolattartó az elejétől a végéig</span></div>
-    <div class="stat rv"><b class="ph-text">[X] év</b><span>garancia a kivitelezésre</span></div>
+<!-- ============ SZÁMOK ============ -->
+<section style="padding: 0 clamp(20px, 4vw, 48px)">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); border-bottom: 1px solid #E2E5E2">
+    <sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 44px 24px 44px 0">
+        <span style="font-weight: 700; font-size: clamp(48px, 4.8vw, 76px); line-height: .9; letter-spacing: -.06em">{{s.v}}<span style="color: {{accent}}">{{s.u}}</span></span>
+        <span class="mk-cap" style="font-size: 12px; color: #5F6461">{{s.l}}</span>
+      </div>
+    </sc-for>
   </div>
 </section>
 
 <!-- ============ SZOLGÁLTATÁSOK ============ -->
-<section class="sec sec-dark" id="szolgaltatasok">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="rv">
-        <span class="eyebrow">Teljeskörű építőipari kivitelezés</span>
-        <h2 class="h-sec">Az alapozástól a kulcsátadásig.</h2>
-      </div>
-      <p class="sec-lead rv">Egy cég, egy kapcsolattartó, egy felelős. Nem kell külön szakembereket keresnie és összehangolnia: a teljes építést mi szervezzük és végezzük.</p>
-    </div>
+<section id="szolgaltatasok" style="padding: clamp(96px, 10vw, 160px) clamp(20px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 56px">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px 64px; align-items: end">
+    <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Egy cég<span style="color: {{accent}}">.</span><br>Minden szakág<span style="color: {{accent}}">.</span></h2>
+    <p class="mk-cap" style="max-width: 46ch; line-height: 1.7; color: #3E423F">Alapozás · kőműves munkák · tetőfedés · gépészet · villanyszerelés · burkolás · homlokzat · nyílászárók. Nem kell külön szakembereket keresnie és összehangolnia: mi szervezzük, mi felelünk érte.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(560px, 100%), 1fr)); gap: 56px 24px">
+    <sc-for list="{{services}}" as="s" hint-placeholder-count="4">
+      <a href="#ajanlat" onClick="{{s.pick}}" class="mk-svc" style="display: flex; flex-direction: column; gap: 20px; text-decoration: none; color: #111311">
+        <span style="display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #E7E9E7">
+          <span class="mk-img mk-cap" style="display: flex; align-items: flex-end; width: 100%; height: 100%; padding: 20px; background: {{s.tone}}; color: #5F6461; font-size: 11px">{{s.photo}}</span>
+        </span>
+        <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid #111311">
+          <span style="display: flex; align-items: baseline; gap: 18px">
+            <span class="mk-cap" style="color: #3F7A2A; font-size: 12px">{{s.n}}</span>
+            <span style="font-weight: 700; font-size: clamp(28px, 2.6vw, 40px); letter-spacing: -.05em; line-height: 1; text-transform: uppercase">{{s.t}}</span>
+          </span>
+          <span class="mk-cap" style="font-size: 12px; white-space: nowrap">Ajánlatot kérek →</span>
+        </span>
+        <span style="color: #5F6461; max-width: 52ch">{{s.d}}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
 
-    <div class="bento">
-      <article class="b-card b-big rv" data-cat="haz">
-        <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 22 24 6l19 16"/><path d="M10 20v22h28V20"/><path d="M20 42V30h8v12"/></svg></div>
-        <h3>Családi házak</h3>
-        <p>Új ház a telek kiválasztásától az átadásig. Szerkezetkész vagy kulcsrakész állapotban, egy kapcsolattartóval.</p>
-        <button class="b-link" data-type="haz">Ajánlatot kérek <span aria-hidden="true">→</span></button>
-      </article>
-      <article class="b-card rv" data-cat="bovites">
-        <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 40V22l12-10 12 10v18z"/><path d="M30 28h12v12H30"/><path d="M36 22v12M30 28v0"/></svg></div>
-        <h3>Bővítés</h3>
-        <p>Tetőtér-beépítés, oldalszárny, plusz szoba. A meglévő házhoz hibátlanul csatlakozó toldás.</p>
-        <button class="b-link" data-type="bovites">Ajánlatot kérek <span aria-hidden="true">→</span></button>
-      </article>
-      <article class="b-card rv" data-cat="felujitas">
-        <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M30 8a10 10 0 0 0-9 14L8 35l5 5 13-13a10 10 0 0 0 14-9l-6 6-5-1-1-5z"/></svg></div>
-        <h3>Felújítás</h3>
-        <p>Régi házból korszerű otthon: szerkezet, gépészet, belső terek, nyílászárók.</p>
-        <button class="b-link" data-type="felujitas">Ajánlatot kérek <span aria-hidden="true">→</span></button>
-      </article>
-      <article class="b-card b-wide rv" data-cat="kicsi">
-        <div class="b-ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 40V20l18-10 18 10v20z"/><path d="M14 40V26h20v14"/></svg></div>
-        <h3>Kisebb épületek, 35 m²-ig</h3>
-        <p>Garázs, hétvégi ház, kis üzlethelyiség. Gyors átfutás, egyszerű folyamat.</p>
-        <button class="b-link" data-type="kicsi">Ajánlatot kérek <span aria-hidden="true">→</span></button>
-      </article>
+<!-- ============ ELŐTTE / UTÁNA ============ -->
+<section id="munkak" style="padding: clamp(96px, 10vw, 160px) 0 0; display: flex; flex-direction: column; gap: 40px">
+  <div style="padding: 0 clamp(20px, 4vw, 48px); display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+    <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Előtte<span style="color: {{accent}}">.</span><br>Utána<span style="color: {{accent}}">.</span></h2>
+    <p class="mk-cap" style="color: #5F6461; font-size: 12px">[Település] · Családi ház · [Év] · Húzza a csúszkát</p>
+  </div>
+  <div style="position: relative; height: clamp(360px, 52vw, 760px); overflow: hidden; background: #7A7F7B">
+    <div class="mk-cap" style="position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: flex-end; padding: 28px clamp(20px, 4vw, 48px); font-size: 11px; color: #EEF0EE">[Fotó: kész épület]</div>
+    <div style="position: absolute; inset: 0 auto 0 0; width: {{baPct}}; overflow: hidden; background: #A7ABA8; border-right: 2px solid #FFFFFF">
+      <div class="mk-cap" style="position: absolute; left: clamp(20px, 4vw, 48px); bottom: 28px; font-size: 11px; color: #2E322F; white-space: nowrap">[Fotó: üres telek, ugyanabból a szögből]</div>
     </div>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Alapozás</span><span>Kőműves munkák</span><span>Tetőfedés</span><span>Vakolás</span><span>Gépészet</span><span>Villanyszerelés</span><span>Burkolás</span><span>Festés</span><span>Homlokzat</span><span>Nyílászárók</span>
-        <span>Alapozás</span><span>Kőműves munkák</span><span>Tetőfedés</span><span>Vakolás</span><span>Gépészet</span><span>Villanyszerelés</span><span>Burkolás</span><span>Festés</span><span>Homlokzat</span><span>Nyílászárók</span>
-      </div>
-    </div>
+    <span class="mk-cap" style="position: absolute; top: 24px; left: clamp(20px, 4vw, 48px); padding: 8px 12px; background: #FFFFFF; color: #111311; font-size: 11px; font-weight: 600">Előtte</span>
+    <span class="mk-cap" style="position: absolute; top: 24px; right: clamp(20px, 4vw, 48px); padding: 8px 12px; background: #3F7A2A; color: #FFFFFF; font-size: 11px; font-weight: 600">Utána</span>
+    <span aria-hidden="true" style="position: absolute; top: 50%; left: {{baPct}}; width: 60px; height: 60px; margin: -30px 0 0 -30px; background: #FFFFFF; color: #111311; display: flex; align-items: center; justify-content: center; pointer-events: none; font-weight: 600">←→</span>
+    <input class="mk-range" type="range" min="0" max="100" value="{{ba}}" onChange="{{setBa}}" aria-label="Előtte–utána összehasonlítás">
+  </div>
+  <div style="padding: 0 clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
+    <p style="max-width: 56ch; color: #3E423F">[X] hónap a kezdéstől az átadásig, végig egy kapcsolattartóval a tulajdonos oldalán.</p>
+    <a class="mk-cap mk-ul" href="#ajanlat" style="font-weight: 600; color: #3F7A2A">Ilyet szeretnék →</a>
   </div>
 </section>
 
 <!-- ============ FOLYAMAT ============ -->
-<section class="sec sec-mid" id="folyamat">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="rv">
-        <span class="eyebrow">Így dolgozunk</span>
-        <h2 class="h-sec">Első hívástól<br>a kulcsig.</h2>
+<section id="folyamat" style="padding: clamp(96px, 10vw, 160px) clamp(20px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 48px">
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 64px; flex-wrap: wrap">
+    <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Négy lépés<span style="color: {{accent}}">.</span><br>Egy ház<span style="color: {{accent}}">.</span></h2>
+    <p class="mk-cap" style="color: #5F6461; max-width: 36ch; line-height: 1.7">Kattintson a lépésekre, és nézze, hogyan épül fel a háza az első hívástól a kulcsig.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr)); gap: 0; border: 1px solid #111311">
+
+    <!-- RAJZ: lépésenként épülő ház -->
+    <div style="position: relative; background: #F3F4F3; display: flex; flex-direction: column; border-right: 1px solid #111311">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; border-bottom: 1px solid #DADDDA">
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">Építési napló · lap {{procNum}} / 4</span>
+        <span class="mk-cap" style="font-size: 11px; font-weight: 600; color: #3F7A2A">{{procDur}}</span>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 3vw, 40px)">
+        <svg viewBox="0 0 600 440" role="img" aria-label="{{procAlt}}" style="width: 100%; max-width: 640px; height: auto; overflow: visible" fill="none" stroke-linecap="square">
+          <path d="M20 380 H580" stroke="#111311" stroke-width="2"></path>
+          <g stroke="#B8BDB9" stroke-width="1">
+            <path d="M40 392 l-8 10 M70 392 l-8 10 M100 392 l-8 10 M500 392 l-8 10 M530 392 l-8 10 M560 392 l-8 10"></path>
+          </g>
+
+          <!-- 01 Felmérés: kitűzés, mérőszalag -->
+          <g style="opacity: {{v.stakes}}; transition: opacity .6s">
+            <path d="M130 380 V346 M470 380 V346" stroke="#111311" stroke-width="2"></path>
+            <path d="M130 346 h22 l-6 7 6 7 h-22 M470 346 h22 l-6 7 6 7 h-22" stroke="{{accent}}" stroke-width="2" fill="{{accent}}"></path>
+            <path d="M130 380 H470" stroke="{{accent}}" stroke-width="2" stroke-dasharray="2 8"></path>
+            <circle cx="300" cy="300" r="26" stroke="#111311" stroke-width="1.5"></circle>
+            <path d="M300 266 V334 M266 300 H334" stroke="#111311" stroke-width="1"></path>
+            <path d="M300 326 L280 380 M300 326 L320 380 M300 326 V380" stroke="#5F6461" stroke-width="1.5"></path>
+          </g>
+          <path d="M130 412 H470 M130 404 V420 M470 404 V420" stroke="#5F6461" stroke-width="1"></path>
+          <text x="300" y="432" text-anchor="middle" font-size="13" fill="#5F6461" font-family="Inter Tight, sans-serif" letter-spacing="2">[X] M</text>
+
+          <!-- 02 Ajánlat: szaggatott terv -->
+          <g style="opacity: {{v.plan}}; transition: opacity .6s" stroke="#3F7A2A" stroke-width="1.5" stroke-dasharray="7 6">
+            <path d="M140 380 V220 H460 V380"></path>
+            <path d="M110 232 L300 96 L490 232"></path>
+            <path d="M200 380 V300 H250 V380 M330 260 H400 V320 H330 Z M210 240 H260 V280 H210 Z"></path>
+          </g>
+          <g style="opacity: {{v.plan}}; transition: opacity .6s">
+            <rect x="372" y="120" width="150" height="62" fill="#FFFFFF" stroke="#111311" stroke-width="1.5"></rect>
+            <text x="386" y="146" font-size="12" fill="#5F6461" font-family="Inter Tight, sans-serif" letter-spacing="1.5">TÉTELES AJÁNLAT</text>
+            <text x="386" y="170" font-size="18" font-weight="700" fill="#111311" font-family="Inter Tight, sans-serif">[X] Ft</text>
+          </g>
+
+          <!-- 03 Kivitelezés: szerkezet + állvány + daru -->
+          <g style="opacity: {{v.build}}; transition: opacity .6s">
+            <path d="M140 380 V220 H460 V380" stroke="#111311" stroke-width="3"></path>
+            <path d="M110 232 L300 96 L490 232" stroke="#111311" stroke-width="3"></path>
+            <path d="M160 220 L300 120 L440 220 M200 192 V220 M250 156 V220 M300 120 V220 M350 156 V220 M400 192 V220" stroke="#8A8F8C" stroke-width="1.5"></path>
+            <path d="M140 300 H460 M140 260 H460" stroke="#C3C8C4" stroke-width="1"></path>
+          </g>
+          <g style="opacity: {{v.scaffold}}; transition: opacity .6s" stroke="#8A8F8C" stroke-width="1.5">
+            <path d="M478 380 V200 M500 380 V200 M478 330 H500 M478 280 H500 M478 230 H500 M478 330 L500 280 M478 280 L500 230"></path>
+            <path d="M560 380 V48 M560 48 H330 M560 48 L590 70 M560 70 L500 48 M380 48 V110" stroke="#111311" stroke-width="2"></path>
+            <rect x="366" y="110" width="28" height="18" stroke="{{accent}}" stroke-width="2"></rect>
+          </g>
+
+          <!-- 04 Átadás: kész ház -->
+          <g style="opacity: {{v.done}}; transition: opacity .6s">
+            <path d="M140 220 H460 V380 H140 Z" fill="#FFFFFF" stroke="#111311" stroke-width="3"></path>
+            <path d="M110 232 L300 96 L490 232 Z" fill="#111311" stroke="#111311" stroke-width="3"></path>
+            <path d="M380 140 V108 H408 V160" fill="#111311" stroke="#111311" stroke-width="2"></path>
+            <rect x="200" y="300" width="50" height="80" fill="{{accent}}"></rect>
+            <circle cx="240" cy="342" r="3" fill="#FFFFFF"></circle>
+            <rect x="210" y="240" width="50" height="40" fill="#DDE9D5" stroke="#111311" stroke-width="2"></rect>
+            <rect x="330" y="260" width="70" height="60" fill="#DDE9D5" stroke="#111311" stroke-width="2"></rect>
+            <path d="M365 260 V320 M330 290 H400 M235 240 V280" stroke="#111311" stroke-width="1.5"></path>
+            <path d="M520 380 V320" stroke="#111311" stroke-width="2"></path>
+            <circle cx="520" cy="300" r="30" fill="{{accent}}" fill-opacity=".25" stroke="{{accent}}" stroke-width="2"></circle>
+            <g transform="translate(64 120) rotate(-12)">
+              <rect x="0" y="0" width="118" height="46" stroke="#3F7A2A" stroke-width="2.5"></rect>
+              <text x="59" y="30" text-anchor="middle" font-size="18" font-weight="800" fill="#3F7A2A" font-family="Inter Tight, sans-serif" letter-spacing="3">ÁTADVA</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 0 22px 22px">
+        <sc-for list="{{steps}}" as="p" hint-placeholder-count="4">
+          <span style="height: 4px; background: {{p.bar}}; transition: background .4s"></span>
+        </sc-for>
       </div>
     </div>
-    <div class="proc">
-      <ol class="proc-list" id="procList"></ol>
-      <div class="proc-panel" id="procPanel" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
 
-<section class="cta-band">
-  <div class="wrap cta-in rv">
-    <div><h3>Kezdjük a felméréssel.</h3><p>24 órán belül visszahívjuk, és egyeztetünk egy időpontot a helyszínre.</p></div>
-    <div class="cta-btns"><a class="btn btn-lime btn-lg" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-lg" data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a></div>
-  </div>
-</section>
-
-<!-- ============ ELŐTTE–UTÁNA ============ -->
-<section class="sec sec-light" id="munkak">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="rv">
-        <span class="eyebrow dark">Munkáink</span>
-        <h2 class="h-sec">Előtte – utána.</h2>
-      </div>
-      <div class="filters rv" id="baTabs" role="group" aria-label="Projektek"></div>
-    </div>
-    <div class="ba rv" id="ba">
-      <div class="ba-after ph-bg"><span class="ba-tag ba-tag-r">Utána</span><span class="ph-label">[Fotó: kész épület]</span></div>
-      <div class="ba-before ph-bg" id="baBefore"><span class="ba-tag">Előtte</span><span class="ph-label">[Fotó: üres telek, ugyanabból a szögből]</span></div>
-      <div class="ba-handle" id="baHandle"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
-      <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Előtte–utána csúszka">
-    </div>
-    <div class="ba-cap"><b id="baName">[Település] · családi ház</b><span>Húzza a csúszkát balra vagy jobbra</span></div>
+    <!-- LÉPÉSEK -->
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+      <sc-for list="{{steps}}" as="p" hint-placeholder-count="4">
+        <li style="border-bottom: {{p.sep}}">
+          <button type="button" onClick="{{p.pick}}" aria-expanded="{{p.expanded}}" style="width: 100%; display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 2.4vw, 32px); border: 0; background: {{p.bg}}; color: {{p.fg}}; text-align: left; cursor: pointer; transition: background .3s, color .3s">
+            <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; width: 100%">
+              <span style="display: flex; align-items: baseline; gap: 18px">
+                <span style="font-weight: 700; font-size: 15px; letter-spacing: -.02em; color: {{p.numC}}">{{p.n}}</span>
+                <span style="font-weight: 700; font-size: {{p.size}}; letter-spacing: -.055em; line-height: .95; text-transform: uppercase; transition: font-size .35s">{{p.t}}</span>
+              </span>
+              <span aria-hidden="true" style="font-size: 22px; color: {{p.numC}}">{{p.icon}}</span>
+            </span>
+            <sc-if value="{{p.active}}">
+              <span style="display: flex; flex-direction: column; gap: 14px; padding-left: 38px">
+                <span style="font-size: 17px; line-height: 1.55; color: #D6DAD7; max-width: 46ch">{{p.d}}</span>
+                <span class="mk-cap" style="font-size: 11px; color: {{accent}}">{{p.dur}}</span>
+              </span>
+            </sc-if>
+          </button>
+        </li>
+      </sc-for>
+      <li style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px clamp(22px, 2.4vw, 32px); border-top: 1px solid #111311">
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">Az 1. lépés ingyenes</span>
+        <a href="#ajanlat" class="mk-cap mk-ul" style="font-weight: 600; color: #3F7A2A">Kérem a felmérést →</a>
+      </li>
+    </ol>
   </div>
 </section>
 
 <!-- ============ KÖRZET ============ -->
-<section class="sec sec-dark" id="korzet">
-  <div class="wrap area">
-    <div class="area-copy rv">
-      <span class="eyebrow">Szolgáltatási terület</span>
-      <h2 class="h-sec">Kiszállunk<br>önhöz?</h2>
-      <p class="sec-lead">Bajától nagyjából 100 km-ig vállalunk munkát. Koppintson a legközelebbi városra.</p>
-      <div class="chips" id="cityChips" role="group" aria-label="Települések"></div>
-      <div class="area-answer" id="areaAnswer" aria-live="polite"></div>
-    </div>
-    <div class="radar rv">
-      <svg id="radar" viewBox="-150 -130 300 260" role="img" aria-label="Térkép a 100 km-es körzetről Baja körül"></svg>
-    </div>
+<section id="korzet" style="margin-top: clamp(96px, 10vw, 160px); background: #151716; color: #FFFFFF; padding: clamp(72px, 8vw, 128px) clamp(20px, 4vw, 48px) clamp(56px, 6vw, 88px); display: flex; flex-direction: column; gap: 56px; overflow: hidden">
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 64px; flex-wrap: wrap">
+    <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Kiszállunk<br>önhöz<span style="color: {{accent}}">?</span></h2>
+    <p class="mk-cap" style="max-width: 38ch; line-height: 1.7; color: #B9BEBA">Válassza ki a táblán, merre lakik. Megmutatjuk, milyen messze van, és merre indulunk.</p>
   </div>
-</section>
 
-<section class="cta-band">
-  <div class="wrap cta-in rv">
-    <div><h3>Beszéljünk a tervéről.</h3><p>Mondja el, mit építene, és tételes, írásos ajánlatot kap.</p></div>
-    <div class="cta-btns"><a class="btn btn-lime btn-lg" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-lg" data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a></div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 40px clamp(32px, 5vw, 80px); align-items: center">
+
+    <!-- ÚTJELZŐ TÁBLA -->
+    <div style="justify-self: center; width: 100%; max-width: 560px; display: flex; flex-direction: column; align-items: center">
+      <div style="width: 100%; background: #2E6B26; border-radius: 18px; padding: 10px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.6)">
+        <div style="border: 3px solid #FFFFFF; border-radius: 11px; padding: 18px 10px 10px; display: flex; flex-direction: column">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 12px 14px; border-bottom: 3px solid #FFFFFF; margin-bottom: 6px">
+            <span style="display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -.02em">
+              <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 30px; padding: 0 6px; background: #FFFFFF; color: #2E6B26; border-radius: 4px; font-size: 16px">MK</span>
+              Baja, innen indulunk
+            </span>
+            <span style="font-weight: 700; font-size: 15px">km</span>
+          </div>
+          <sc-for list="{{signRows}}" as="r" hint-placeholder-count="10">
+            <button type="button" onClick="{{r.pick}}" aria-pressed="{{r.pressed}}" style="display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 48px; padding: 0 12px; border: 0; border-radius: 6px; background: {{r.bg}}; color: {{r.fg}}; font-weight: 700; font-size: 21px; letter-spacing: -.02em; text-align: left; cursor: pointer; transition: background .2s, color .2s">
+              <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="transform: rotate({{r.rot}}); justify-self: center">
+                <path d="M12 3 L19 11 H14.5 V21 H9.5 V11 H5 Z" fill="currentColor"></path>
+              </svg>
+              <span>{{r.n}}</span>
+              <span style="font-variant-numeric: tabular-nums">{{r.km}}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <div aria-hidden="true" style="display: flex; gap: 120px">
+        <span style="width: 10px; height: 90px; background: linear-gradient(90deg, #6B706C, #9EA39F 50%, #6B706C)"></span>
+        <span style="width: 10px; height: 90px; background: linear-gradient(90deg, #6B706C, #9EA39F 50%, #6B706C)"></span>
+      </div>
+    </div>
+
+    <!-- EREDMÉNY -->
+    <div style="display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
+        <div aria-hidden="true" style="position: relative; width: 132px; height: 132px; flex: none; border-radius: 50%; border: 1.5px solid #3A3E3B">
+          <span class="mk-cap" style="position: absolute; top: 6px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #8A8F8C">É</span>
+          <span class="mk-cap" style="position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #8A8F8C">D</span>
+          <span class="mk-cap" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #8A8F8C">Ny</span>
+          <span class="mk-cap" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: #8A8F8C">K</span>
+          <svg viewBox="0 0 100 100" style="position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate({{selRot}}); transition: transform 1s cubic-bezier(.3,1.4,.5,1)">
+            <path d="M50 14 L58 50 H42 Z" fill="{{accent}}"></path>
+            <path d="M50 86 L58 50 H42 Z" fill="#3A3E3B"></path>
+            <circle cx="50" cy="50" r="5" fill="#FFFFFF"></circle>
+          </svg>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <span class="mk-cap" style="font-size: 12px; color: #8A8F8C">{{selHead}}</span>
+          <span style="font-weight: 700; font-size: clamp(56px, 6vw, 96px); line-height: .9; letter-spacing: -.06em">{{selKm}}<span style="color: {{accent}}; font-size: .45em; letter-spacing: -.02em; margin-left: .15em">km</span></span>
+          <span style="font-size: 17px; color: #D6DAD7">{{selTime}}</span>
+        </div>
+      </div>
+
+      <!-- ÚT: furgon -->
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="position: relative; height: 64px">
+          <div style="position: absolute; left: 0; right: 0; bottom: 14px; height: 18px; background: #2A2D2B"></div>
+          <div style="position: absolute; left: 0; right: 0; bottom: 22px; height: 2px; background: repeating-linear-gradient(90deg, #FFFFFF 0 18px, transparent 18px 34px); opacity: .55"></div>
+          <div style="position: absolute; left: 0; bottom: 14px; height: 18px; width: {{vanPct}}; background: {{accent}}; opacity: .22; transition: width 1.3s cubic-bezier(.2,.7,.2,1)"></div>
+          <svg width="58" height="34" viewBox="0 0 58 34" aria-hidden="true" style="position: absolute; bottom: 20px; left: {{vanPct}}; transform: translateX(-50%); transition: left 1.3s cubic-bezier(.2,.7,.2,1)">
+            <path d="M2 6 H36 V26 H2 Z" fill="#FFFFFF"></path>
+            <path d="M36 12 H47 L55 20 V26 H36 Z" fill="#FFFFFF"></path>
+            <path d="M39 14 H46 L51 19 H39 Z" fill="#151716"></path>
+            <path d="M6 13 H32" stroke="{{accent}}" stroke-width="3"></path>
+            <circle cx="12" cy="27" r="5" fill="#151716" stroke="#FFFFFF" stroke-width="2.5"></circle>
+            <circle cx="45" cy="27" r="5" fill="#151716" stroke="#FFFFFF" stroke-width="2.5"></circle>
+          </svg>
+          <span style="position: absolute; right: 0; bottom: 4px; width: 3px; height: 46px; background: {{accent}}"></span>
+        </div>
+        <div class="mk-cap" style="display: flex; justify-content: space-between; font-size: 11px; color: #8A8F8C">
+          <span>Baja · 0 km</span><span>50 km</span><span style="color: {{accent}}">100 km határ</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 24px; border-top: 1px solid #2E322F">
+        <p style="font-size: 20px; letter-spacing: -.02em; line-height: 1.35">{{selMsg}}</p>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap">
+          <a href="#ajanlat" onClick="{{cityToQuiz}}" class="mk-btn mk-green mk-cap" style="display: inline-flex; align-items: center; gap: 24px; min-height: 58px; padding: 0 24px; background: #3F7A2A; color: #FFFFFF; text-decoration: none; font-weight: 600">{{selCta}} <span aria-hidden="true">→</span></a>
+        </div>
+        <p style="font-size: 13px; color: #8A8F8C">Nincs a táblán a települése? 100 km-en belül oda is kimegyünk, a visszahíváskor egyeztetjük. A távolság légvonalban, a menetidő becslés.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ TAMÁS ============ -->
-<section class="sec sec-light" id="tamas">
-  <div class="wrap quote">
-    <div class="ph ph-portrait rv"><span>[Portré: Tamás a munkaterületen]</span></div>
-    <div class="quote-body rv">
-      <span class="eyebrow dark">Akivel dolgozni fog</span>
-      <svg class="qm" width="44" height="34" viewBox="0 0 44 34" aria-hidden="true"><path fill="currentColor" d="M0 34V18C0 8 5 2 15 0l2 5c-5 1.500-7.500 4.500-7.500 9H17v20zm25 0V18C25 8 30 2 40 0l2 5c-5 1.500-7.500 4.500-7.500 9H42v20z"/></svg>
-      <blockquote>[Tamás két-három mondata arról, miért csinálja, és mire figyel minden munkánál.]</blockquote>
-      <p class="who"><b>Varga Tamás</b><span>[beosztás] · Modern Konstrukt Kft.</span></p>
+<section style="padding: clamp(96px, 10vw, 160px) clamp(20px, 4vw, 48px) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px 80px; align-items: end">
+  <div class="mk-cap" style="aspect-ratio: 4 / 5; max-height: 680px; background: #D9DCDA; display: flex; align-items: flex-end; padding: 22px; font-size: 11px; color: #3E423F">[Portré: Tamás a munkaterületen, fekete-fehér]</div>
+  <div style="display: flex; flex-direction: column; gap: 36px; padding-bottom: 8px">
+    <span class="mk-cap" style="color: #3F7A2A; font-size: 12px">Akivel dolgozni fog</span>
+    <p style="font-weight: 600; font-size: clamp(30px, 3.2vw, 50px); line-height: 1.04; letter-spacing: -.045em; text-wrap: pretty">„[Tamás két-három mondata arról, miért csinálja, és mire figyel minden munkánál.]”</p>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid #111311">
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <strong style="font-weight: 700; font-size: 20px; letter-spacing: -.02em">Varga Tamás</strong>
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">[Beosztás] · Modern Konstrukt Kft.</span>
+      </div>
+      <a href="tel:+36305328127" class="mk-cap mk-ul" style="font-weight: 600">Hívja közvetlenül →</a>
     </div>
   </div>
 </section>
 
-<!-- ============ AJÁNLATKÉRÉS ============ -->
-<section class="sec sec-form" id="ajanlat">
-  <div class="wrap form-wrap">
-    <div class="form-copy rv">
-      <span class="eyebrow">Ajánlatkérés</span>
-      <h2 class="h-sec">Három lépés,<br>egy perc.</h2>
-      <p class="sec-lead">24 órán belül telefonon jelentkezünk, és megbeszéljük a részleteket.</p>
-      <ul class="trust">
-        <li>24 órán belül visszahívjuk</li>
-        <li>Helyszíni felmérés, tételes írásos ajánlat</li>
-        <li>Egy kapcsolattartó az átadásig</li>
-      </ul>
-      <div class="call-box">
-        <small>Inkább hívna?</small>
-        <a data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a>
-      </div>
+<!-- ============ ZÁRÓ CTA ============ -->
+<section style="margin-top: clamp(96px, 10vw, 160px); background: #111311; color: #FFFFFF; padding: clamp(72px, 9vw, 144px) clamp(20px, 4vw, 48px) clamp(48px, 5vw, 72px); display: flex; flex-direction: column; gap: 56px">
+  <h2 style="font-weight: 700; font-size: clamp(64px, 11vw, 188px); line-height: .84; letter-spacing: -.065em; text-transform: uppercase">Kezdjük<br>a felméréssel<span style="color: {{accent}}">.</span></h2>
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap">
+    <p class="mk-cap" style="max-width: 40ch; line-height: 1.7; color: #C9CDCA">Ingyenes és kötelezettségmentes. Kimegyünk, felmérjük, és tételes, írásos ajánlatot kap.</p>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap">
+      <a href="#ajanlat" class="mk-btn mk-green mk-cap" style="display: inline-flex; align-items: center; gap: 24px; min-height: 64px; padding: 0 28px; background: #3F7A2A; color: #FFFFFF; text-decoration: none; font-weight: 600">Visszahívást kérek <span aria-hidden="true">→</span></a>
+      <a href="tel:+36305328127" class="mk-cap" style="display: inline-flex; align-items: center; min-height: 64px; padding: 0 28px; border: 1px solid #5F6461; color: #FFFFFF; text-decoration: none; font-weight: 600">+36 30 532 8127</a>
     </div>
-
-    <form class="form rv" id="quoteForm" novalidate>
-      <div class="form-top">
-        <span id="stepName">Épület</span><span id="stepNum">1 / 3</span>
-      </div>
-      <div class="bar"><i id="formBar"></i></div>
-
-      <div class="step" data-step="1">
-        <h3>Mit építene?</h3>
-        <div class="chips chips-dark" id="fTypes" role="group" aria-label="Épület típusa"></div>
-                <div class="form-nav"><span></span><button type="button" class="btn btn-lime" data-next>Tovább <span class="arr">→</span></button></div>
-      </div>
-
-      <div class="step" data-step="2" hidden>
-        <h3>Hol és mikor?</h3>
-        <label class="fld"><span>Melyik településen?</span><input class="inp" id="fTown" name="telepules" type="text" autocomplete="address-level2" placeholder="Pl. Baja"></label>
-        <div class="fld"><span>Mikorra?</span><div class="chips chips-dark" id="fWhen" role="group" aria-label="Időzítés"></div></div>
-        <div class="form-nav"><button type="button" class="btn-link" data-back>← Vissza</button><button type="button" class="btn btn-lime" data-next>Tovább <span class="arr">→</span></button></div>
-      </div>
-
-      <div class="step" data-step="3" hidden>
-        <h3>Hogyan érjük el?</h3>
-        <label class="fld"><span>Név</span><input class="inp" id="fName" name="nev" type="text" autocomplete="name" required></label>
-        <label class="fld"><span>Telefonszám</span><input class="inp" id="fPhone" name="telefon" type="tel" autocomplete="tel" required></label>
-        <label class="check"><input type="checkbox" id="fConsent" required><i></i><span>Elfogadom az <a href="#" target="_blank" rel="noopener">adatkezelési tájékoztatót</a>.</span></label>
-        <p class="err" id="formErr" role="alert" hidden></p>
-        <div class="form-nav"><button type="button" class="btn-link" data-back>← Vissza</button><button type="submit" class="btn btn-lime" id="submitBtn">Ajánlatot kérek <span class="arr">→</span></button></div>
-      </div>
-
-      <div class="step done" data-step="done" hidden>
-        <div class="done-ic" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></div>
-        <h3 id="doneTitle">Köszönjük!</h3>
-        <p id="doneText"></p>
-        <div class="done-sum" id="doneSum"></div>
-        <button type="button" class="btn-link" id="formReset">Új ajánlatkérés</button>
-      </div>
-    </form>
   </div>
 </section>
 
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="ftr">
-  <div class="wrap ftr-in">
-    <div class="ftr-brand">
-      <img src="assets/logo.png" alt="Modern Konstrukt Kft. – Teljeskörű építőipari kivitelezés" width="260" height="229" loading="lazy">
-    </div>
-    <div class="ftr-col">
-      <h4>Cégadatok</h4>
-      <p>MODERN KONSTRUKT Építőipari Kft.<br>6503 Baja, Pandur utca 42.<br>Cégjegyzékszám: 03-09-135144<br>Adószám: 29316469-2-03</p>
-    </div>
-    <div class="ftr-col">
-      <h4>Kapcsolat</h4>
-      <p><a data-phone-link data-phone href="tel:+36305328127">+36 30 532 8127</a><br>Baja és 100 km-es körzete</p>
-    </div>
-    <div class="ftr-col">
-      <h4>Jogi</h4>
-      <p><a href="#">Adatkezelési tájékoztató</a><br><a href="#">Süti-beállítások</a><br><a href="#">Impresszum</a></p>
-    </div>
+<!-- ============ LÁBLÉC ============ -->
+<footer style="background: #111311; color: #A3A8A4; padding: 40px clamp(20px, 4vw, 48px) 48px; border-top: 1px solid #2A2E2B; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 32px; font-size: 14px">
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <span style="color: #FFFFFF; font-weight: 800; letter-spacing: -.04em; text-transform: uppercase; font-size: 18px">Modern<span style="color: {{accent}}">Konstrukt</span></span>
+    <span>Építőipari Kft. · 6503 Baja, Pandur utca 42.</span>
   </div>
-  <div class="wrap ftr-bot"><span>© 2026 Modern Konstrukt Kft.</span><span>Weboldal: iGZP</span></div>
-  <div class="giant" aria-hidden="true">KONSTRUKT</div>
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <span>Cégjegyzékszám: 03-09-135144</span>
+    <span>Adószám: 29316469-2-03</span>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <a href="tel:+36305328127" style="color: #FFFFFF; text-decoration: none">+36 30 532 8127</a>
+    <a href="mailto:modern.konstrukt@gmail.com" style="color: #FFFFFF; text-decoration: none">modern.konstrukt@gmail.com</a>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <a href="#" style="color: #A3A8A4">Adatkezelési tájékoztató</a>
+    <a href="#" style="color: #A3A8A4">Süti-beállítások</a>
+    <a href="#" style="color: #A3A8A4">Impresszum</a>
+    <span>© 2026 · Weboldal: iGZP</span>
+  </div>
 </footer>
 
-<!-- Mobil alsó sáv -->
-<div class="mbar" id="mbar">
-  <a class="btn btn-ghost" data-phone-link href="tel:+36305328127" aria-label="Hívás"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Hívás</a>
-  <a class="btn btn-solid" href="#ajanlat" data-go-form>Ajánlatot kérek <span class="arr">→</span></a>
+<!-- ============ MOBIL ALSÓ SÁV ============ -->
+<div class="mk-mbar" style="position: sticky; bottom: 0; z-index: 30; gap: 0; background: #FFFFFF; border-top: 1px solid #E2E5E2">
+  <a href="tel:+36305328127" class="mk-cap" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 58px; text-decoration: none; color: #111311; font-weight: 600; font-size: 12px">Hívás</a>
+  <a href="#ajanlat" class="mk-cap" style="flex: 1.6; display: flex; align-items: center; justify-content: center; min-height: 58px; background: #3F7A2A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 12px">Ingyenes felmérés →</a>
 </div>
 
-<script src="config.js"></script>
-<script src="app.js"></script>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#62A047","options":["#62A047","#3F7A2A","#8A8F8C"]},"$preview":{"width":1440,"height":6200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { phase: 'lead', type: 'haz', phone: '', consent: false, err: false, sendErr: false, size: '', when: '', town: '', ba: 50, city: 'Kalocsa', proc: 0, procHold: false };
+  }
+  componentDidMount() {
+    var self = this;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) this.procTimer = setInterval(function () {
+      if (!self.state.procHold) self.setState({ proc: (self.state.proc + 1) % 4 });
+    }, 3800);
+  }
+  componentWillUnmount() { clearInterval(this.procTimer); }
+  renderVals() {
+    var self = this, st = this.state;
+    var accent = this.props.accent ?? '#62A047';
+    var set = function (o) { return function () { self.setState(o); }; };
+    var on = function (sel) { return { bd: sel ? '#111311' : '#D5D8D6', bg: sel ? '#111311' : '#FFFFFF', fg: sel ? '#FFFFFF' : '#3E423F', pressed: sel ? 'true' : 'false' }; };
+    var TYPES = [
+      { id: 'haz', label: 'Családi ház' },
+      { id: 'bovites', label: 'Bővítés' },
+      { id: 'felujitas', label: 'Felújítás' },
+      { id: 'kicsi', label: 'Kisebb épület' }
+    ];
+    var types = TYPES.map(function (t) { return Object.assign({}, t, on(st.type === t.id), { pick: set({ type: t.id }) }); });
+    var chip = function (key, label) { var o = {}; o[key] = label; return Object.assign({ label: label }, on(st[key] === label), { pick: set(o) }); };
+
+    var CITIES = [['Baja', 46.1806, 18.9547], ['Kalocsa', 46.529, 18.984], ['Kiskunhalas', 46.435, 19.485], ['Szekszárd', 46.35, 18.706], ['Mohács', 45.993, 18.68], ['Kecskemét', 46.907, 19.691], ['Szeged', 46.253, 20.148], ['Pécs', 46.0727, 18.2323], ['Paks', 46.622, 18.858], ['Kiskőrös', 46.621, 19.285], ['Jánoshalma', 46.298, 19.325], ['Bácsalmás', 46.125, 19.333]];
+    var b = CITIES[0];
+    var cities = CITIES.map(function (c) {
+      var dx = (c[2] - b[2]) * 111.32 * Math.cos(b[1] * Math.PI / 180);
+      var dy = (c[1] - b[1]) * 110.57;
+      var km = Math.round(Math.sqrt(dx * dx + dy * dy));
+      return { n: c[0], dx: dx, dy: dy, km: km, deg: Math.round(Math.atan2(dx, dy) * 180 / Math.PI) };
+    }).sort(function (a, c) { return a.km - c.km; });
+    var cur = cities.filter(function (c) { return c.n === st.city; })[0] || cities[0];
+    var mins = Math.round(cur.km * 1.3 / 70 * 60);
+    var timeTxt = mins >= 60 ? (Math.floor(mins / 60) + ' óra ' + (mins % 60 ? (mins % 60) + ' perc' : '')) : (mins + ' perc');
+    var DIRS = ['északra', 'északkeletre', 'keletre', 'délkeletre', 'délre', 'délnyugatra', 'nyugatra', 'északnyugatra'];
+    var dirTxt = DIRS[Math.round(((cur.deg % 360) + 360) % 360 / 45) % 8];
+
+    var services = [
+      { id: 'haz', n: '01', t: 'Családi házak', d: 'Új ház a telektől az átadásig, szerkezetkész vagy kulcsrakész állapotban, egy kapcsolattartóval.', photo: '[Fotó: családi ház]', tone: '#DADDDB' },
+      { id: 'bovites', n: '02', t: 'Bővítés', d: 'Tetőtér-beépítés, oldalszárny, plusz szoba. A meglévő házhoz hibátlanul csatlakozó toldás.', photo: '[Fotó: bővítés]', tone: '#CFD3D0' },
+      { id: 'felujitas', n: '03', t: 'Felújítás', d: 'Régi házból korszerű otthon: szerkezet, gépészet, belső terek, nyílászárók.', photo: '[Fotó: felújítás]', tone: '#CFD3D0' },
+      { id: 'kicsi', n: '04', t: 'Kisebb épületek', d: 'Garázs, hétvégi ház, kis üzlethelyiség 35 m²-ig. Gyors átfutás, egyszerű folyamat.', photo: '[Fotó: garázs / kis épület]', tone: '#DADDDB' }
+    ].map(function (s) { return Object.assign({}, s, { pick: set({ type: s.id, phase: 'lead' }) }); });
+
+    var steps = [
+      { n: '01', t: 'Felmérés', d: 'Kimegyünk a helyszínre, megnézzük a telket, a megközelítést és a közműveket, és meghallgatjuk, mire kell az épület.', dur: '[X nap a hívástól]' },
+      { n: '02', t: 'Ajánlat', d: 'Tételes, írásos ajánlatot kap, amiből látszik, mi mennyibe kerül, és mikorra készülünk el.', dur: '[X munkanap]' },
+      { n: '03', t: 'Kivitelezés', d: 'Ütemterv szerint haladunk, és fotókkal jelezzük, hol tart a munka. Nem kell kijárnia ellenőrizni.', dur: '[X hét]' },
+      { n: '04', t: 'Átadás', d: 'Közösen bejárjuk az épületet, és csak akkor zárjuk le, ha minden rendben van. Ön a kulcsot kapja, nem a gondot.', dur: '[X év garancia]' }
+    ];
+    var P = st.proc;
+    var ALT = ['Kitűzött telek, mérőműszer', 'Szaggatott vonalas terv és tételes ajánlat', 'Épülő szerkezet állvánnyal és daruval', 'Kész, átadott ház'];
+    var procStep = steps[P];
+    steps = steps.map(function (p, i) {
+      var a = i === P;
+      return Object.assign({}, p, {
+        active: a, expanded: a ? 'true' : 'false',
+        bg: a ? '#111311' : '#FFFFFF',
+        fg: a ? '#FFFFFF' : (i < P ? '#8A8F8C' : '#111311'),
+        numC: a ? accent : '#3F7A2A',
+        size: a ? 'clamp(40px, 4.2vw, 64px)' : 'clamp(24px, 2.2vw, 32px)',
+        icon: a ? '—' : '+',
+        bar: i <= P ? accent : '#D5D8D6',
+        sep: i < 3 ? '1px solid #E2E5E2' : '0',
+        pick: function () { self.setState({ proc: i, procHold: true }); }
+      });
+    });
+
+    var typeLabel = (TYPES.filter(function (t) { return t.id === st.type; })[0] || TYPES[0]).label;
+    var phoneOk = String(st.phone).replace(/\D/g, '').length >= 8;
+    return {
+      accent: accent,
+      isLead: st.phase === 'lead', isQ: st.phase === 'q', isDone: st.phase === 'done',
+      types: types,
+      phone: st.phone, consent: st.consent, err: st.err, sendErr: st.sendErr,
+      phoneBd: st.err && !phoneOk ? '#B3261E' : '#111311',
+      setPhone: function (e) { self.setState({ phone: e.target.value }); },
+      toggleConsent: function () { self.setState({ consent: !st.consent }); },
+      submit: function () {
+        if (!phoneOk || !st.consent) { self.setState({ err: true }); return; }
+        self.setState({ phase: 'q', err: false, sendErr: false });
+        window.MKLead.send({ tipus: typeLabel, forras: 'hero – telefonszám', telefon: st.phone }, function (ok) { if (!ok) self.setState({ sendErr: true }); });
+      },
+      sizes: ['50 m² alatt', '50–100 m²', '100–150 m²', '150 m² felett'].map(function (l) { return chip('size', l); }),
+      whens: ['3 hónapon belül', '3–6 hónap', '6–12 hónap', 'Csak tájékozódom'].map(function (l) { return chip('when', l); }),
+      town: st.town,
+      setTown: function (e) { self.setState({ town: e.target.value }); },
+      finish: function () {
+        self.setState({ phase: 'done' });
+        if (st.size || st.when || st.town) window.MKLead.send({ tipus: typeLabel, forras: 'hero – kiegészítő kérdések', telefon: st.phone, alapterulet: st.size, mikorra: st.when, telepules: st.town }, function () {});
+      },
+      summary: [typeLabel, st.phone, st.size, st.when, st.town].filter(Boolean).join(' · '),
+      reset: set({ phase: 'lead', phone: '', consent: false, size: '', when: '', town: '', err: false }),
+      stats: [
+        { v: '100', u: 'km', l: 'Körzet Baja körül' },
+        { v: '24', u: 'h', l: 'És visszahívjuk' },
+        { v: '1', u: '.', l: 'Felelős az átadásig' },
+        { v: '[X]', u: 'év', l: 'Garancia' }
+      ],
+      services: services, steps: steps,
+      procNum: P + 1, procDur: procStep.dur, procAlt: ALT[P],
+      v: { stakes: P === 0 ? 1 : (P === 1 ? 0.3 : 0), plan: P === 1 ? 1 : 0, build: P >= 2 ? 1 : 0, scaffold: P === 2 ? 1 : 0, done: P === 3 ? 1 : 0 },
+      ba: st.ba, baPct: st.ba + '%',
+      setBa: function (e) { self.setState({ ba: Number(e.target.value) }); },
+      signRows: cities.map(function (c) {
+        var sel = c.n === st.city;
+        return { n: c.n, km: c.km === 0 ? '–' : c.km, rot: c.km === 0 ? '0deg' : c.deg + 'deg', pressed: sel ? 'true' : 'false', bg: sel ? '#FFFFFF' : 'transparent', fg: sel ? '#2E6B26' : '#FFFFFF', pick: set({ city: c.n }) };
+      }),
+      selRot: (cur.km === 0 ? 0 : cur.deg) + 'deg',
+      selKm: cur.km,
+      selHead: cur.km === 0 ? 'Baja · itt vagyunk otthon' : 'Baja → ' + cur.n + ' · ' + dirTxt,
+      selTime: cur.km === 0 ? 'Helyben vagyunk, akár holnap kimegyünk.' : 'kb. ' + timeTxt.trim() + ' autóval',
+      vanPct: Math.min(100, cur.km) + '%',
+      selMsg: cur.km === 0 ? 'Baja a központunk. Itt bármikor kimegyünk felmérni.' : 'Igen, ' + cur.n + ' és környéke a körzetünkben van. Ennyi idő, és ott állunk a telkén.',
+      selCta: cur.km === 0 ? 'Felmérést kérek Baján' : 'Felmérést kérek: ' + cur.n,
+      cityToQuiz: set({ town: cur.n })
+    };
+  }
+}
+</script>
 </body>
 </html>

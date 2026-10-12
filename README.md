@@ -1,7 +1,7 @@
 # Modern Konstrukt
 
-Statikus, reszponzív weboldal (GitHub Pages).
+Statikus weboldal (GitHub Pages).
 
-- `index.html`, `styles.css`, `app.js`: az oldal
-- `config.js`: telefonszám, e-mail, űrlap-végpont (itt kell szerkeszteni)
-- `assets/`: logó, betűtípusok
+- `index.html`: az oldal (Design Component sablon + a hozzá tartozó szkript)
+- `assets/lead.js`: ajánlatkérések küldése (FormSubmit, modern.konstrukt@gmail.com)
+- `assets/`: logó, React és az oldal futtatókörnyezete
