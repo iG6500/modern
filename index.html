@@ -37,7 +37,7 @@ a{color:#111311}a:hover{color:#3F7A2A}
 @media (prefers-reduced-motion:reduce){.mk-col{transition:none}}
 .mk-img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .mk-svc:hover .mk-img{transform:scale(1.03)}
-.mk-rise{display:block;animation:mkrise 1s cubic-bezier(.2,.7,.2,1) both}
+.mk-rise{display:block;white-space:nowrap;animation:mkrise 1s cubic-bezier(.2,.7,.2,1) both}
 .mk-rise.d2{animation-delay:.1s}.mk-rise.d3{animation-delay:.2s}
 @keyframes mkrise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 .mk input:focus-visible,.mk button:focus-visible,.mk a:focus-visible{outline:2px solid #3F7A2A;outline-offset:3px}
@@ -57,7 +57,7 @@ a{color:#111311}a:hover{color:#3F7A2A}
 .mk-nav:hover::before,.mk-nav:focus-visible::before{transform:translate(-50%,0) rotate(45deg) scale(1);opacity:1}
 .mk-nav:last-child .mk-nl u:last-child{color:#111311}
 @media (prefers-reduced-motion:reduce){.mk-nl u,.mk-nav::before,.mk-nav::after{transition:none}}
-@media (max-width:720px){.mk h2{font-size:clamp(34px,10.4vw,52px) !important}.mk h1{font-size:clamp(64px,19vw,90px) !important}.mk-phcap{display:none}#top{padding-top:56px}}
+@media (max-width:720px){.mk h2{font-size:clamp(34px,10.4vw,52px) !important}.mk h1{font-size:clamp(30px,9.4vw,52px) !important}.mk-phcap{display:none}#top{padding-top:56px}}
 @media (prefers-reduced-motion:reduce){.mk-rise{animation:none}}
 </style>
 </helmet>
@@ -73,7 +73,7 @@ a{color:#111311}a:hover{color:#3F7A2A}
   <nav aria-label="Fő navigáció" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px clamp(18px, 3.4vw, 52px)">
     <a class="mk-cap mk-nav mk-hide-sm" href="#szolgaltatasok" style="text-decoration: none; color: #3E423F" aria-label="Szolgáltatások"><span class="mk-nl" aria-hidden="true"><b style="--i:0"><u>S</u><u>S</u></b><b style="--i:1"><u>z</u><u>z</u></b><b style="--i:2"><u>o</u><u>o</u></b><b style="--i:3"><u>l</u><u>l</u></b><b style="--i:4"><u>g</u><u>g</u></b><b style="--i:5"><u>á</u><u>á</u></b><b style="--i:6"><u>l</u><u>l</u></b><b style="--i:7"><u>t</u><u>t</u></b><b style="--i:8"><u>a</u><u>a</u></b><b style="--i:9"><u>t</u><u>t</u></b><b style="--i:10"><u>á</u><u>á</u></b><b style="--i:11"><u>s</u><u>s</u></b><b style="--i:12"><u>o</u><u>o</u></b><b style="--i:13"><u>k</u><u>k</u></b></span></a>
     <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
-    <a class="mk-cap mk-nav mk-hide-sm" href="#munkak" style="text-decoration: none; color: #3E423F" aria-label="Munkáink"><span class="mk-nl" aria-hidden="true"><b style="--i:0"><u>M</u><u>M</u></b><b style="--i:1"><u>u</u><u>u</u></b><b style="--i:2"><u>n</u><u>n</u></b><b style="--i:3"><u>k</u><u>k</u></b><b style="--i:4"><u>á</u><u>á</u></b><b style="--i:5"><u>i</u><u>i</u></b><b style="--i:6"><u>n</u><u>n</u></b><b style="--i:7"><u>k</u><u>k</u></b></span></a>
+    <a class="mk-cap mk-nav mk-hide-sm" href="#referenciak" style="text-decoration: none; color: #3E423F" aria-label="Referenciák"><span class="mk-nl" aria-hidden="true"><b style="--i:0"><u>R</u><u>R</u></b><b style="--i:1"><u>e</u><u>e</u></b><b style="--i:2"><u>f</u><u>f</u></b><b style="--i:3"><u>e</u><u>e</u></b><b style="--i:4"><u>r</u><u>r</u></b><b style="--i:5"><u>e</u><u>e</u></b><b style="--i:6"><u>n</u><u>n</u></b><b style="--i:7"><u>c</u><u>c</u></b><b style="--i:8"><u>i</u><u>i</u></b><b style="--i:9"><u>á</u><u>á</u></b><b style="--i:10"><u>k</u><u>k</u></b></span></a>
     <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
     <a class="mk-cap mk-nav mk-hide-sm" href="#folyamat" style="text-decoration: none; color: #3E423F" aria-label="Folyamat"><span class="mk-nl" aria-hidden="true"><b style="--i:0"><u>F</u><u>F</u></b><b style="--i:1"><u>o</u><u>o</u></b><b style="--i:2"><u>l</u><u>l</u></b><b style="--i:3"><u>y</u><u>y</u></b><b style="--i:4"><u>a</u><u>a</u></b><b style="--i:5"><u>m</u><u>m</u></b><b style="--i:6"><u>a</u><u>a</u></b><b style="--i:7"><u>t</u><u>t</u></b></span></a>
     <span class="mk-hide-sm" aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; background: #CFD3D0"></span>
@@ -91,14 +91,14 @@ a{color:#111311}a:hover{color:#3F7A2A}
 
   <div style="position: relative; padding: 0 clamp(20px, 4vw, 48px) clamp(32px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 40px; align-items: end">
     <div style="display: flex; flex-direction: column; gap: 40px">
-      <h1 style="font-weight: 700; font-size: clamp(76px, 11.5vw, 188px); line-height: .84; letter-spacing: -.065em; text-transform: uppercase">
-        <span class="mk-rise">Alap<span style="color: {{accent}}">.</span></span>
-        <span class="mk-rise d2">Falak<span style="color: {{accent}}">.</span></span>
-        <span class="mk-rise d3">Kulcs<span style="color: {{accent}}">.</span></span>
+      <h1 style="font-weight: 700; font-size: clamp(36px, 4.3vw, 72px); line-height: .95; letter-spacing: -.055em; text-transform: uppercase">
+        <span class="mk-rise">Alapoktól</span>
+        <span class="mk-rise d2">a kulcsátadásig<span style="color: {{accent}}">,</span></span>
+        <span class="mk-rise d3">egy kézben<span style="color: {{accent}}">.</span></span>
       </h1>
       <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 48px; flex-wrap: wrap">
         <p class="mk-cap" style="max-width: 38ch; line-height: 1.6; color: #F1F3F1">Családi ház, bővítés, felújítás Baja 100 km-es körzetében. Egy cég, egy felelős az alapozástól a kulcsátadásig.</p>
-        <a class="mk-cap mk-ul" href="#munkak" style="color: #FFFFFF; font-weight: 600">Munkáink →</a>
+        <a class="mk-cap mk-ul" href="#referenciak" style="color: #FFFFFF; font-weight: 600">Referenciáink →</a>
       </div>
     </div>
 
@@ -222,22 +222,41 @@ a{color:#111311}a:hover{color:#3F7A2A}
 </section>
 
 <!-- ============ ELŐTTE / UTÁNA ============ -->
-<section id="munkak" style="padding: clamp(96px, 10vw, 160px) 0 0; display: flex; flex-direction: column; gap: 40px">
-  <div style="padding: 0 clamp(20px, 4vw, 48px); display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap">
-    <h2 style="font-weight: 700; font-size: clamp(48px, 6.4vw, 104px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Előtte<span style="color: {{accent}}">.</span><br>Utána<span style="color: {{accent}}">.</span></h2>
-    <p class="mk-cap" style="color: #5F6461; font-size: 12px">[Település] · Családi ház · [Év] · Húzza a csúszkát</p>
+<section id="referenciak" style="padding: clamp(96px, 10vw, 160px) clamp(20px, 4vw, 48px) 0; display: flex; flex-direction: column; gap: 48px">
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 64px; flex-wrap: wrap">
+    <h2 style="font-weight: 700; font-size: clamp(40px, 6vw, 96px); line-height: .88; letter-spacing: -.06em; text-transform: uppercase">Referenciák<span style="color: {{accent}}">.</span></h2>
+    <p class="mk-cap" style="color: #5F6461; max-width: 38ch; line-height: 1.7">Elkészült és jelenleg épülő munkáink. Ilyet szeretne? Beszéljünk róla.</p>
   </div>
-  <div style="position: relative; height: clamp(300px, 33.1vw, 640px); overflow: hidden; background: #2A2D2B">
-    <img src="assets/modern_konstrukt_utana.webp" alt="Az elkészült családi ház" width="1536" height="509" loading="lazy" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%">
-    <img src="assets/modern_konstrukt_elotte.webp" alt="Az üres telek az építés előtt" width="1536" height="509" loading="lazy" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; clip-path: inset(0 {{baClip}} 0 0)">
-    <span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: {{baPct}}; width: 2px; margin-left: -1px; background: #FFFFFF; pointer-events: none"></span>
-    <span class="mk-cap" style="position: absolute; top: 24px; left: clamp(20px, 4vw, 48px); padding: 8px 12px; background: #FFFFFF; color: #111311; font-size: 11px; font-weight: 600">Előtte</span>
-    <span class="mk-cap" style="position: absolute; top: 24px; right: clamp(20px, 4vw, 48px); padding: 8px 12px; background: #3F7A2A; color: #FFFFFF; font-size: 11px; font-weight: 600">Utána</span>
-    <span aria-hidden="true" style="position: absolute; top: 50%; left: {{baPct}}; width: 60px; height: 60px; margin: -30px 0 0 -30px; background: #FFFFFF; color: #111311; display: flex; align-items: center; justify-content: center; pointer-events: none; font-weight: 600">←→</span>
-    <input class="mk-range" type="range" min="0" max="100" value="{{ba}}" onChange="{{setBa}}" aria-label="Előtte–utána összehasonlítás">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 40px 24px">
+    <a href="#ajanlat" class="mk-svc" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #111311">
+      <span style="display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #E7E9E7">
+        <span class="mk-img mk-cap" style="display: flex; align-items: flex-end; width: 100%; height: 100%; padding: 20px; background: #DADDDB; color: #5F6461; font-size: 11px">[Fotó: referenciamunka]</span>
+      </span>
+      <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #111311">
+        <span style="font-weight: 700; font-size: clamp(22px, 1.9vw, 28px); letter-spacing: -.04em; text-transform: uppercase">[Település]</span>
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">Családi ház · [Év]</span>
+      </span>
+    </a>
+    <a href="#ajanlat" class="mk-svc" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #111311">
+      <span style="display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #E7E9E7">
+        <span class="mk-img mk-cap" style="display: flex; align-items: flex-end; width: 100%; height: 100%; padding: 20px; background: #DADDDB; color: #5F6461; font-size: 11px">[Fotó: referenciamunka]</span>
+      </span>
+      <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #111311">
+        <span style="font-weight: 700; font-size: clamp(22px, 1.9vw, 28px); letter-spacing: -.04em; text-transform: uppercase">[Település]</span>
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">Bővítés · [Év]</span>
+      </span>
+    </a>
+    <a href="#ajanlat" class="mk-svc" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none; color: #111311">
+      <span style="display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #E7E9E7">
+        <span class="mk-img mk-cap" style="display: flex; align-items: flex-end; width: 100%; height: 100%; padding: 20px; background: #DADDDB; color: #5F6461; font-size: 11px">[Fotó: referenciamunka]</span>
+      </span>
+      <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid #111311">
+        <span style="font-weight: 700; font-size: clamp(22px, 1.9vw, 28px); letter-spacing: -.04em; text-transform: uppercase">[Település]</span>
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">Felújítás · [Év]</span>
+      </span>
+    </a>
   </div>
-  <div style="padding: 0 clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap">
-    <p style="max-width: 56ch; color: #3E423F">[X] hónap a kezdéstől az átadásig, végig egy kapcsolattartóval a tulajdonos oldalán.</p>
+  <div style="display: flex; justify-content: flex-end">
     <a class="mk-cap mk-ul" href="#ajanlat" style="font-weight: 600; color: #3F7A2A">Ilyet szeretnék →</a>
   </div>
 </section>
@@ -373,11 +392,11 @@ a{color:#111311}a:hover{color:#3F7A2A}
   <div class="mk-cap" style="aspect-ratio: 4 / 5; max-height: 680px; background: #D9DCDA; display: flex; align-items: flex-end; padding: 22px; font-size: 11px; color: #3E423F">[Portré: Tamás a munkaterületen, fekete-fehér]</div>
   <div style="display: flex; flex-direction: column; gap: 36px; padding-bottom: 8px">
     <span class="mk-cap" style="color: #3F7A2A; font-size: 12px">Akivel dolgozni fog</span>
-    <p style="font-weight: 600; font-size: clamp(30px, 3.2vw, 50px); line-height: 1.04; letter-spacing: -.045em; text-wrap: pretty">„[Tamás két-három mondata arról, miért csinálja, és mire figyel minden munkánál.]”</p>
+    <p style="font-weight: 500; font-size: clamp(19px, 1.7vw, 25px); line-height: 1.5; letter-spacing: -.015em; text-wrap: pretty">„Számomra az építés nem csupán szakma, hanem az alkotás öröme is. Különleges érzés látni, ahogyan egy elképzelésből kézzelfogható, értéket teremtő otthon születik. Munkám során a műszaki precizitásra, a minőségi kivitelezésre, a részletek iránti igényességre és a megrendelői elképzelések megvalósítására egyaránt nagy hangsúlyt fektetek. Hiszem, hogy a valódi minőség a gondos tervezésben, a felelős döntésekben és a részletekre fordított figyelemben rejlik.”</p>
     <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid #111311">
       <div style="display: flex; flex-direction: column; gap: 2px">
         <strong style="font-weight: 700; font-size: 20px; letter-spacing: -.02em">Varga Tamás</strong>
-        <span class="mk-cap" style="font-size: 11px; color: #5F6461">[Beosztás] · Modern Konstrukt Kft.</span>
+        <span class="mk-cap" style="font-size: 11px; color: #5F6461">Építőmérnök, ügyvezető · Modern Konstrukt Kft.</span>
       </div>
       <a href="tel:+36305328127" class="mk-cap mk-ul" style="font-weight: 600">Hívja közvetlenül →</a>
     </div>
@@ -476,10 +495,10 @@ class Component extends DCLogic {
     ].map(function (s) { return Object.assign({}, s, { pick: set({ type: s.id, phase: 'lead' }) }); });
 
     var steps = [
-      { n: '01', t: 'Felmérés', d: 'Kimegyünk a helyszínre, megnézzük a telket, a megközelítést és a közműveket, és meghallgatjuk, mire kell az épület.', dur: '[X nap a hívástól]' },
-      { n: '02', t: 'Ajánlat', d: 'Tételes, írásos ajánlatot kap, amiből látszik, mi mennyibe kerül, és mikorra készülünk el.', dur: '[X munkanap]' },
-      { n: '03', t: 'Kivitelezés', d: 'Ütemterv szerint haladunk, és fotókkal jelezzük, hol tart a munka. Nem kell kijárnia ellenőrizni.', dur: '[X hét]' },
-      { n: '04', t: 'Átadás', d: 'Közösen bejárjuk az épületet, és csak akkor zárjuk le, ha minden rendben van. Ön a kulcsot kapja, nem a gondot.', dur: '[X év garancia]' }
+      { n: '01', t: 'Felmérés', d: 'Egy helyszíni szemle alkalmával megbeszéljük az ügyfél igényeit.', dur: '[X nap a hívástól]' },
+      { n: '02', t: 'Ajánlat', d: 'Tételes, írásos árajánlat, a vállalt határidőkkel, igény szerint vázrajzokkal.', dur: '[X munkanap]' },
+      { n: '03', t: 'Kivitelezés', d: 'A kivitelezés teljes időtartama alatt személyes kapcsolattartás a megrendelővel.', dur: '[X hét]' },
+      { n: '04', t: 'Átadás', d: 'Az elkészült munkát részletes ellenőrzést és közös bejárást követően, dokumentáltan adjuk át megrendelőinknek.', dur: '2 év garancia' }
     ];
     var P = st.proc;
     var ALT = ['Kitűzött telek, mérőműszer', 'Szaggatott vonalas terv és tételes ajánlat', 'Épülő szerkezet állvánnyal és daruval', 'Kész, átadott ház'];
@@ -528,7 +547,7 @@ class Component extends DCLogic {
         { v: '100', u: 'km', l: 'Körzet Baja körül' },
         { v: '24', u: 'h', l: 'És visszahívjuk' },
         { v: '1', u: '.', l: 'Felelős az átadásig' },
-        { v: '[X]', u: 'év', l: 'Garancia' }
+        { v: '2', u: ' év', l: 'Garancia a kivitelezésre' }
       ],
       services: services, steps: steps,
       procNum: P + 1, procDur: procStep.dur, procAlt: ALT[P],
