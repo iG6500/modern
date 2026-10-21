@@ -57,6 +57,14 @@ a{color:#111311}a:hover{color:#3F7A2A}
 .mk-nav:hover::before,.mk-nav:focus-visible::before{transform:translate(-50%,0) rotate(45deg) scale(1);opacity:1}
 .mk-nav:last-child .mk-nl u:last-child{color:#111311}
 @media (prefers-reduced-motion:reduce){.mk-nl u,.mk-nav::before,.mk-nav::after{transition:none}}
+.mk-igzp{position:absolute;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:12px;width:176px;height:64px;background:#E63329;color:#C9CDCA;text-decoration:none;clip-path:polygon(calc(100% - 16px) 100%,100% calc(100% - 16px),100% 100%,100% 100%);transition:clip-path .55s cubic-bezier(.7,0,.2,1),background .35s .1s}
+.mk-igzp img{width:32px;height:32px;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .4s cubic-bezier(.3,1.4,.5,1)}
+.mk-igzp span{color:#C9CDCA;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .4s cubic-bezier(.3,1.4,.5,1)}
+.mk-igzp:hover,.mk-igzp:focus-visible{background:#1B1E1C;clip-path:polygon(0 100%,0 0,100% 0,100% 100%)}
+.mk-igzp:hover img,.mk-igzp:hover span,.mk-igzp:focus-visible img,.mk-igzp:focus-visible span{opacity:1;transform:none;transition-delay:.22s}
+.mk-igzp:focus-visible{outline:2px solid #E63329;outline-offset:-2px}
+@media (hover:none){.mk-igzp{clip-path:polygon(calc(100% - 22px) 100%,100% calc(100% - 22px),100% 100%,100% 100%)}}
+@media (prefers-reduced-motion:reduce){.mk-igzp,.mk-igzp img,.mk-igzp span{transition:none}}
 @media (max-width:720px){.mk h2{font-size:clamp(34px,10.4vw,52px) !important}.mk h1{font-size:clamp(30px,9.4vw,52px) !important}.mk-phcap{display:none}#top{padding-top:56px}}
 @media (prefers-reduced-motion:reduce){.mk-rise{animation:none}}
 </style>
@@ -416,7 +424,7 @@ a{color:#111311}a:hover{color:#3F7A2A}
 </section>
 
 <!-- ============ LÁBLÉC ============ -->
-<footer style="background: #111311; color: #A3A8A4; padding: 40px clamp(20px, 4vw, 48px) 48px; border-top: 1px solid #2A2E2B; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 32px; font-size: 14px">
+<footer style="position: relative; background: #111311; color: #A3A8A4; padding: 40px clamp(20px, 4vw, 48px) 48px; border-top: 1px solid #2A2E2B; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 32px; font-size: 14px">
   <div style="display: flex; flex-direction: column; gap: 6px">
     <span style="color: #FFFFFF; font-weight: 800; letter-spacing: -.04em; text-transform: uppercase; font-size: 18px">Modern<span style="color: {{accent}}">Konstrukt</span></span>
     <span>Építőipari Kft. · 6503 Baja, Pandur utca 42.</span>
@@ -433,8 +441,12 @@ a{color:#111311}a:hover{color:#3F7A2A}
     <a href="#" style="color: #A3A8A4">Adatkezelési tájékoztató</a>
     <a href="#" style="color: #A3A8A4">Süti-beállítások</a>
     <a href="#" style="color: #A3A8A4">Impresszum</a>
-    <span>© 2026 · Weboldal: iGZP</span>
+    <span>© 2026</span>
   </div>
+  <a class="mk-igzp" href="https://www.igzp.hu" target="_blank" rel="noopener" aria-label="Weboldal: iGZP (megnyitás új lapon)">
+    <img src="assets/igzp.svg" alt="" width="32" height="32">
+    <span>Weboldal: iGZP</span>
+  </a>
 </footer>
 
 <!-- ============ MOBIL ALSÓ SÁV ============ -->
