@@ -10,6 +10,8 @@ window.MKLead = (function () {
   return {
     send: function (data, cb) {
       (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', lead_type: data.tipus });
+      /* Meta Pixel „Lead” esemény: csak ha a látogató megadta a marketing-hozzájárulást (az fbq addig nem létezik). Személyes adatot nem küldünk. */
+      if (window.fbq && /telefonszám/.test(data.forras || '')) { try { window.fbq('track', 'Lead'); } catch (e) {} }
       var payload = Object.assign({ _subject: 'Új ajánlatkérés – ' + data.tipus + ' – ' + data.telefon, _template: 'table' }, data, tracking());
       fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
         .then(function (r) { cb(r.ok); }).catch(function () { cb(false); });
