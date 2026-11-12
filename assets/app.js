@@ -83,4 +83,82 @@
     setStep(0);
     if (!reduce) setInterval(function () { if (!hold) setStep((P + 1) % 4); }, 3800);
   }
+
+  /* ---------- képnagyítás (lightbox) ---------- */
+  (function () {
+    var imgs = $$('img[data-zoom]');
+    if (!imgs.length) return;
+    var CSS = '.lb{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:rgba(10,12,10,.92);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}' +
+      '.lb.on{opacity:1;visibility:visible}' +
+      '.lb-fig{margin:0;max-width:min(94vw,1500px);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:12px;transform:scale(.9);transition:transform .45s cubic-bezier(.2,.8,.2,1)}' +
+      '.lb.on .lb-fig{transform:scale(1)}' +
+      '.lb-img{display:block;max-width:100%;max-height:calc(92vh - 48px);width:auto;height:auto;object-fit:contain;background:#1b1e1c;box-shadow:0 30px 80px rgba(0,0,0,.5);touch-action:pan-y}' +
+      '.lb-cap{color:#D6DAD7;font:500 13px/1.4 "Inter Tight",Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-align:center;min-height:1.4em}' +
+      '.lb-b{position:absolute;display:grid;place-items:center;width:52px;height:52px;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:rgba(17,19,17,.6);color:#fff;font:400 26px/1 Arial,sans-serif;cursor:pointer;transition:background .2s,border-color .2s}' +
+      '.lb-b:hover{background:#3F7A2A;border-color:#3F7A2A}.lb-b:focus-visible{outline:2px solid #9CC077;outline-offset:3px}' +
+      '.lb-x{top:18px;right:18px}.lb-p{left:18px;top:50%;margin-top:-26px}.lb-n{right:18px;top:50%;margin-top:-26px}.lb-b[hidden]{display:none}' +
+      '@media (max-width:720px){.lb-p,.lb-n{top:auto;bottom:18px;margin:0}.lb-p{left:calc(50% - 64px)}.lb-n{right:calc(50% - 64px)}.lb-fig{max-height:84vh}.lb-img{max-height:calc(84vh - 48px)}}' +
+      '@media (prefers-reduced-motion:reduce){.lb,.lb-fig{transition:none}}';
+    var st = document.createElement('style'); st.textContent = CSS; document.head.appendChild(st);
+    var lb = document.createElement('div');
+    lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Képnagyítás');
+    lb.innerHTML = '<button type="button" class="lb-b lb-x" aria-label="Bezárás">×</button>' +
+      '<button type="button" class="lb-b lb-p" aria-label="Előző kép">‹</button>' +
+      '<button type="button" class="lb-b lb-n" aria-label="Következő kép">›</button>' +
+      '<figure class="lb-fig"><img class="lb-img" alt=""><figcaption class="lb-cap"></figcaption></figure>';
+    document.body.appendChild(lb);
+    var big = $('.lb-img', lb), cap = $('.lb-cap', lb), prev = $('.lb-p', lb), next = $('.lb-n', lb), closeBtn = $('.lb-x', lb);
+    var group = [], idx = 0, opener = null;
+
+    function show(i) {
+      idx = (i + group.length) % group.length;
+      var el = group[idx];
+      big.src = el.getAttribute('data-zoom'); big.alt = el.getAttribute('alt') || '';
+      cap.textContent = el.getAttribute('data-caption') || '';
+      var multi = group.length > 1; prev.hidden = next.hidden = !multi;
+      var n = group[(idx + 1) % group.length]; if (n && n !== el) { var pre = new Image(); pre.src = n.getAttribute('data-zoom'); }
+    }
+    function open(el, trigger) {
+      var g = el.getAttribute('data-group');
+      group = imgs.filter(function (x) { return x.getAttribute('data-group') === g; });
+      opener = trigger || el;
+      show(group.indexOf(el));
+      lb.classList.add('on'); document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function close() {
+      lb.classList.remove('on'); document.body.style.overflow = '';
+      if (opener && opener.focus) opener.focus();
+    }
+    imgs.forEach(function (im) {
+      var scope = im.getAttribute('data-scope') === 'card' ? (im.closest('.mk-zoomcard') || im.parentNode) : (im.closest('.mk-img') || im.parentNode);
+      scope.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); open(im, scope); });
+      if (scope.classList.contains('mk-zoomcard')) {
+        scope.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(im, scope); } });
+      }
+    });
+    lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-fig')) close(); });
+    closeBtn.addEventListener('click', close);
+    prev.addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+    next.addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('on')) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+      else if (e.key === 'ArrowRight') show(idx + 1);
+      else if (e.key === 'Tab') {
+        var f = [closeBtn, prev, next].filter(function (b) { return !b.hidden; });
+        var i = f.indexOf(document.activeElement);
+        if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+        else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+      }
+    });
+    /* érintéses lapozás */
+    var sx = null;
+    big.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    big.addEventListener('touchend', function (e) {
+      if (sx === null) return; var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 50 && group.length > 1) show(idx + (dx < 0 ? 1 : -1));
+    });
+  })();
 })();
