@@ -7,3 +7,4 @@ Statikus weboldal (GitHub Pages), keretrendszer nélkül.
 - `assets/lead.js`: ajánlatkérések küldése (FormSubmit, modern.konstrukt@gmail.com)
 - `assets/consent.js`: süti-hozzájárulás; a GoatCounter statisztika csak elfogadás után tölt be
 - `assets/og-image.jpg`: megosztási kép (1200×630)
+- `assets/fonts.css`, `assets/fonts/`: a betűtípus (Inter Tight) saját tárhelyről töltődik, külső betűtípus-szolgáltatás nélkül
