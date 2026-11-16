@@ -62,10 +62,8 @@
   /* ---------- „négy lépés” folyamat ---------- */
   var list = $('#pgList');
   if (list) {
-    var items = $$('.ps', list), bars = $$('#pgBars .pgb'), groups = {}, P = 0, hold = false;
-    $$('#pgSvg g[data-st]').forEach(function (g) { groups[g.getAttribute('data-st')] = g; });
-    var ALT = ['Kitűzött telek, mérőműszer', 'Szaggatott vonalas terv és tételes ajánlat', 'Épülő szerkezet állvánnyal és daruval', 'Kész, átadott ház'];
-    var DUR = items.map(function (li) { return $('.ps-dur', li).textContent; });
+    var items = $$('.ps', list), bars = $$('#pgBars .pgb'), pics = $$('#pgImgs .pgimg'), P = 0, hold = false;
+    var DUR = items.map(function (li) { var d = $('.ps-dur', li); return d ? d.textContent : ''; });
     var setStep = function (i) {
       P = i;
       items.forEach(function (li, k) {
@@ -74,10 +72,8 @@
         $('.ps-ic', li).textContent = k === i ? '—' : '+';
       });
       bars.forEach(function (b, k) { b.classList.toggle('on', k <= i); });
-      var v = { stakes: i === 0 ? 1 : (i === 1 ? 0.3 : 0), plan: i === 1 ? 1 : 0, planbox: i === 1 ? 1 : 0, build: i >= 2 ? 1 : 0, scaffold: i === 2 ? 1 : 0, done: i === 3 ? 1 : 0 };
-      Object.keys(v).forEach(function (k) { if (groups[k]) groups[k].style.opacity = v[k]; });
+      pics.forEach(function (p, k) { p.classList.toggle('on', k === i); });
       $('#pgNum').textContent = i + 1; $('#pgDur').textContent = DUR[i];
-      $('#pgSvg').setAttribute('aria-label', ALT[i]);
     };
     list.addEventListener('click', function (e) { var b = e.target.closest('button[data-i]'); if (b) { hold = true; setStep(+b.getAttribute('data-i')); } });
     setStep(0);
